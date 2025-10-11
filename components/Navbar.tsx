@@ -7,50 +7,44 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '/' },
+    { name: 'Buyers', href: '/buyers' },
+    { name: 'Sellers', href: '/sellers' },
     { name: 'About', href: '/about' },
-    { name: 'Properties', href: '/listings' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray">
       <div className="container-max">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-navy-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">CT</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-navy-600">Cheryl Towey</h1>
-              <p className="text-sm text-gray-600">Real Estate Professional</p>
+        <div className="flex justify-between items-center py-2 md:py-6 md:justify-center md:relative">
+          {/* Logo - TODO: Replace with actual logo */}
+          <Link href="/" className="flex items-center md:absolute md:left-4 lg:left-8 py-2 md:py-0">
+            <div className="text-2xl text-black tracking-tight">
+              {/* TODO: Add logo image here */}
+              <span className="block font-serif font-extralight">REAL ESTATE</span>
+              <span className="text-sm font-extralight text-gray-dark">Professional Services</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-12">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-navy-600 font-medium transition-colors duration-200"
+                className="text-black hover:text-secondary font-serif text-xl transition-colors duration-200 relative group tracking-wide"
+                style={{ fontWeight: 300 }}
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="btn-primary"
-            >
-              Get Started
-            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-navy-600 hover:bg-gray-100"
+            className="md:hidden p-2 rounded-md text-black hover:text-gold hover:bg-gray-light"
           >
             <svg
               className="w-6 h-6"
@@ -79,25 +73,19 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
+          <div className="md:hidden border-t border-gray py-4">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-navy-600 font-medium transition-colors duration-200 px-4 py-2"
+                  className="text-black hover:text-secondary font-serif text-xl transition-colors duration-200 px-4 py-2 tracking-wide"
+                  style={{ fontWeight: 300 }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="btn-primary mx-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Get Started
-              </Link>
             </div>
           </div>
         )}

@@ -9,32 +9,22 @@ module.exports = {
     extend: {
       colors: {
         gold: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
+          DEFAULT: '#b89649',
+          dark: '#a27e2d',
+          light: '#d4b679',
+          secondary: 'rgb(194, 168, 120)', // From Cheryl website
         },
-        navy: {
-          50: '#f0f4ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-        }
+        black: '#111111',
+        gray: {
+          light: '#f9f9f9',
+          DEFAULT: '#e5e5e5',
+          dark: '#666666',
+        },
+        white: '#ffffff',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
     },
   },

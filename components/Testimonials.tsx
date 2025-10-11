@@ -1,83 +1,121 @@
-import { Testimonial } from '@/data/mockData';
+'use client';
 
-interface TestimonialsProps {
-  testimonials: Testimonial[];
-}
+import { useState } from 'react';
 
-const Testimonials = ({ testimonials }: TestimonialsProps) => {
-  const isFallback = testimonials.length > 0 && testimonials[0].id === 'fallback';
-  
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <svg
-        key={i}
-        className={`w-5 h-5 ${i < rating ? 'text-gold-400' : 'text-gray-300'}`}
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>
-    ));
+// TODO: Replace with actual testimonials data
+const testimonials = [
+  {
+    id: 1,
+    name: '[Client Name 1]',
+    location: '[Location]',
+    text: '[Client testimonial text goes here. This should be a genuine review or feedback from a satisfied client.]',
+    image: '/images/no-image.svg',
+  },
+  {
+    id: 2,
+    name: '[Client Name 2]',
+    location: '[Location]',
+    text: '[Client testimonial text goes here. This should be a genuine review or feedback from a satisfied client.]',
+    image: '/images/no-image.svg',
+  },
+  {
+    id: 3,
+    name: '[Client Name 3]',
+    location: '[Location]',
+    text: '[Client testimonial text goes here. This should be a genuine review or feedback from a satisfied client.]',
+    image: '/images/no-image.svg',
+  },
+];
+
+const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const current = testimonials[currentIndex];
+
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-gray-light">
       <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            {isFallback ? 'Client Testimonials' : 'What Our Clients Say'}
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-serif font-light text-black mb-4 heading-underline pb-4">
+            Client Testimonials
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {isFallback 
-              ? 'Client testimonials will be displayed here once the system is fully integrated.'
-              : 'Don\'t just take our word for it. Here\'s what our satisfied clients have to say about working with Cheryl.'
-            }
+          <p className="text-lg text-gray-dark max-w-3xl mx-auto mt-8">
+            {/* TODO: Add description */}
+            [Trusted voices from our distinguished clientele]
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white p-6 rounded-lg shadow-lg card-hover"
-            >
-              {/* Stars */}
-              <div className="flex items-center mb-4">
-                {renderStars(testimonial.rating)}
+        {/* Testimonial Display */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            {/* Client Image */}
+            <div className="flex flex-col items-center">
+              {/* TODO: Replace with actual client photos */}
+              <img 
+                src={current.image}
+                alt={current.name}
+                className="w-32 h-32 rounded-full mb-4 border-4 border-gold opacity-40"
+              />
+              <div className="text-center">
+                <div className="font-bold text-black mb-1 text-lg">{current.name}</div>
+                <div className="text-base text-gray-dark font-medium">{current.location}</div>
               </div>
+            </div>
 
-              {/* Testimonial Text */}
-              <blockquote className="text-gray-600 mb-6 italic">
-                "{testimonial.text}"
+            {/* Testimonial Content */}
+            <div className="lg:col-span-2 bg-white p-12 rounded-sm border-l-4 border-gold shadow-lg">
+              <div className="flex items-start mb-6">
+                <div className="text-gold text-4xl mr-4 leading-none">"</div>
+                <div>
+                  <div className="flex items-center mb-4 text-xs text-gray-dark">
+                    <span className="font-bold">{String(currentIndex + 1).padStart(2, '0')}</span>
+                    <span className="mx-2">/</span>
+                    <span>{String(testimonials.length).padStart(2, '0')}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <blockquote className="text-gray-dark text-lg leading-relaxed mb-8 italic">
+                {current.text}
               </blockquote>
 
-              {/* Client Info */}
-              <div className="border-t border-gray-200 pt-4">
-                <div className="font-semibold text-gray-900">
-                  {testimonial.name}
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-gold uppercase tracking-wider">
+                  {/* TODO: Add label */}
+                  [Agent Name]'s Client Experience
                 </div>
-                <div className="text-sm text-gray-500">
-                  {testimonial.location}
+                <div className="flex gap-4">
+                  <button 
+                    onClick={prevTestimonial}
+                    className="text-black hover:text-gold transition-colors duration-200"
+                    aria-label="Previous testimonial"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                  <button 
+                    onClick={nextTestimonial}
+                    className="text-black hover:text-gold transition-colors duration-200"
+                    aria-label="Next testimonial"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 mb-6">
-            {isFallback 
-              ? 'Ready to work with Cheryl?'
-              : 'Ready to experience the same level of service?'
-            }
-          </p>
-          <a
-            href="/contact"
-            className="btn-primary"
-          >
-            Get Started Today
-          </a>
+          </div>
         </div>
       </div>
     </section>

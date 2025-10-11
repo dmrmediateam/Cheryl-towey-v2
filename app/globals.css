@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   html {
@@ -16,15 +16,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-navy-600 hover:bg-navy-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
-  }
-  
-  .btn-secondary {
-    @apply bg-gold-500 hover:bg-gold-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-gold hover:bg-gold-dark text-white font-bold py-4 px-10 rounded-sm transition-all duration-200 uppercase tracking-wider text-base;
   }
   
   .btn-outline {
-    @apply border-2 border-navy-600 text-navy-600 hover:bg-navy-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply border-2 border-gold text-gold hover:bg-gold hover:text-white font-bold py-4 px-10 rounded-sm transition-all duration-200 uppercase tracking-wider text-base;
   }
   
   .card-hover {
@@ -32,10 +28,62 @@
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
   
   .container-max {
     @apply max-w-7xl mx-auto;
+  }
+
+  .heading-line {
+    @apply inline-block relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-16 after:h-0.5 after:bg-gold;
+  }
+  
+  /* Sleek Underline Design - Cheryl Style */
+  .heading-underline {
+    @apply relative inline-block;
+  }
+  
+  .heading-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: rgb(194, 168, 120);
+  }
+  
+  .heading-underline-left::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: rgb(194, 168, 120);
+  }
+  
+  /* Section Headings with Sophisticated Font */
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  h1 {
+    @apply text-5xl sm:text-6xl font-light;
+  }
+  
+  h2 {
+    @apply text-4xl sm:text-5xl font-light;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl font-light;
+  }
+  
+  /* Text Secondary Color from Cheryl Website */
+  .text-secondary {
+    color: rgb(194, 168, 120);
   }
 }
