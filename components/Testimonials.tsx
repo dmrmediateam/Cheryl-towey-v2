@@ -2,28 +2,13 @@
 
 import { useState } from 'react';
 
-// TODO: Replace with actual testimonials data
 const testimonials = [
   {
     id: 1,
-    name: '[Client Name 1]',
-    location: '[Location]',
-    text: '[Client testimonial text goes here. This should be a genuine review or feedback from a satisfied client.]',
-    image: '/images/no-image.svg',
-  },
-  {
-    id: 2,
-    name: '[Client Name 2]',
-    location: '[Location]',
-    text: '[Client testimonial text goes here. This should be a genuine review or feedback from a satisfied client.]',
-    image: '/images/no-image.svg',
-  },
-  {
-    id: 3,
-    name: '[Client Name 3]',
-    location: '[Location]',
-    text: '[Client testimonial text goes here. This should be a genuine review or feedback from a satisfied client.]',
-    image: '/images/no-image.svg',
+    name: 'Alyssa Michelle',
+    location: 'New Jersey',
+    text: 'Cheryl is the most caring, professional, and hard working realtor there is! She will always go above and beyond for her clients and makes you feel like family. I had the pleasure of working with her through the buying process and selling process and could not imagine doing it without her. Highly recommend her!!',
+    image: '/images/client-placeholder.svg',
   },
 ];
 
@@ -44,15 +29,14 @@ const Testimonials = () => {
     <section className="section-padding bg-gray-light">
       <div className="container-max">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-serif font-light text-black mb-4 heading-underline pb-4">
-            Client Testimonials
-          </h2>
-          <p className="text-lg text-gray-dark max-w-3xl mx-auto mt-8">
-            {/* TODO: Add description */}
-            [Trusted voices from our distinguished clientele]
-          </p>
-        </div>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl sm:text-5xl font-serif font-light text-black mb-4 heading-underline pb-4">
+                Client Testimonials
+              </h2>
+              <p className="text-lg text-gray-dark max-w-3xl mx-auto mt-8">
+                Trusted voices from our distinguished clientele who experienced our exceptional service firsthand.
+              </p>
+            </div>
 
         {/* Testimonial Display */}
         <div className="max-w-5xl mx-auto">
@@ -89,10 +73,9 @@ const Testimonials = () => {
               </blockquote>
 
               <div className="flex items-center justify-between">
-                <div className="text-sm text-gold uppercase tracking-wider">
-                  {/* TODO: Add label */}
-                  [Agent Name]'s Client Experience
-                </div>
+                    <div className="text-sm text-gold uppercase tracking-wider">
+                      Cheryl Towey's Client Experience
+                    </div>
                 <div className="flex gap-4">
                   <button 
                     onClick={prevTestimonial}

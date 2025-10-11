@@ -3,12 +3,11 @@ import Link from 'next/link';
 const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* TODO: Replace with video background or high-quality hero image */}
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/no-image.svg)'
+          backgroundImage: 'url(/images/mr1.webp)'
         }}
       >
         {/* Overlay */}
@@ -17,16 +16,14 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        {/* TODO: Replace with actual agent name and tagline */}
         <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-light mb-6 tracking-wide">
-          [Agent Name]
+          Cheryl Towey
         </h1>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-8 tracking-wide font-serif font-light">
-          [Brokerage Name]
+          Weichert Realtors
         </h2>
         <p className="text-lg sm:text-xl mb-12 text-white tracking-wide">
-          {/* TODO: Add service areas */}
-          [Service Areas - City • Town • County]
+          New Jersey • Hackettstown • Andover • Byram • Blairstown • Chester • Washington
         </p>
         
         {/* CTA Buttons */}

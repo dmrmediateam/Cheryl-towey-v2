@@ -16,8 +16,8 @@ const SearchProperties = () => {
         <div className="bg-gray-light p-12 rounded-sm text-center">
           <img 
             src="/images/no-image.svg" 
-            alt="Property search coming soon" 
-            className="w-48 mx-auto opacity-40 mb-6"
+            alt="No listings yet" 
+            className="w-48 opacity-60 mx-auto mb-4"
           />
           <p className="text-gray-dark text-lg">
             Advanced property search integration coming soon

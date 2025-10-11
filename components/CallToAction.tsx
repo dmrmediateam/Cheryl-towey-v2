@@ -7,21 +7,19 @@ const CallToAction = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/no-image.svg)'
+          backgroundImage: 'url(/images/mr2.webp)'
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
 
       <div className="relative z-10 container-max text-center text-white">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8">
-          {/* TODO: Add CTA heading */}
-          Ready to Find Your Dream Home?
-        </h2>
-        <p className="text-lg sm:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
-          {/* TODO: Add CTA description */}
-          [Description about working together and personalized service]
-        </p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8">
+              Ready to Find Your Dream Home?
+            </h2>
+            <p className="text-lg sm:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+              Let Cheryl Towey guide you through New Jersey's premier real estate market with expertise, dedication, and personalized service
+            </p>
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
@@ -51,8 +49,7 @@ const CallToAction = () => {
             href="/contact" 
             className="btn-outline border-white text-white hover:bg-white hover:text-black"
           >
-            {/* TODO: Update button text */}
-            Contact [Agent Name]
+            Contact Cheryl
           </Link>
         </div>
       </div>

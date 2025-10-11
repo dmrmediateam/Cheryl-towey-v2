@@ -1,14 +1,13 @@
 import Link from 'next/link';
 
 const Communities = () => {
-  // TODO: Replace with actual service areas data
   const serviceAreas = [
-    { name: '[Area 1]', description: '[Description of area 1 and services provided]' },
-    { name: '[Area 2]', description: '[Description of area 2 and services provided]' },
-    { name: '[Area 3]', description: '[Description of area 3 and services provided]' },
-    { name: '[Area 4]', description: '[Description of area 4 and services provided]' },
-    { name: '[Area 5]', description: '[Description of area 5 and services provided]' },
-    { name: '[Area 6]', description: '[Description of area 6 and services provided]' },
+    { name: 'Hackettstown', description: 'Cheryl\'s primary service area - charming Warren County town with historic homes, excellent schools, and modern conveniences' },
+    { name: 'Andover', description: 'Cheryl serves this picturesque Sussex County community with beautiful homes and scenic landscapes' },
+    { name: 'Byram', description: 'Cheryl specializes in this desirable Sussex County township with excellent schools and family-friendly neighborhoods' },
+    { name: 'Blairstown', description: 'Cheryl serves this historic Warren County town with stunning homes and rural charm' },
+    { name: 'Chester', description: 'Cheryl\'s expertise extends to this Morris County gem with luxury homes and excellent shopping and dining' },
+    { name: 'Washington', description: 'Cheryl serves this Warren County community with beautiful properties and convenient access to major highways' },
   ];
 
   return (
@@ -20,21 +19,18 @@ const Communities = () => {
             Our Locations
           </h2>
           <p className="text-lg text-gray-dark max-w-3xl mx-auto mt-8">
-            {/* TODO: Add description of service areas */}
-            [Description of communities and areas served]
+            Discover exceptional properties in New Jersey's most prestigious waterfront communities
           </p>
         </div>
 
         {/* Service Areas Content */}
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-serif font-light text-black mb-8">
-            {/* TODO: Update heading */}
-            [Agent Name]'s Primary Service Areas
-          </h3>
-          <p className="text-gray-dark leading-relaxed mb-12 text-base">
-            {/* TODO: Add service areas overview text */}
-            [Overview of primary service areas with key highlights and specializations]
-          </p>
+              <h3 className="text-3xl font-serif font-light text-black mb-8">
+                Cheryl's Primary Service Areas
+              </h3>
+              <p className="text-gray-dark leading-relaxed mb-12 text-base">
+                Cheryl specializes in these six beautiful New Jersey communities with personalized real estate expertise. From historic homes in Hackettstown to luxury properties in Chester, she provides exceptional service throughout Warren, Sussex, and Morris Counties.
+              </p>
 
           {/* Service Areas Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

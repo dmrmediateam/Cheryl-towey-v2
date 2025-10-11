@@ -10,21 +10,20 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              {/* TODO: Add logo image */}
-              <div className="text-xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                [LOGO]
-              </div>
-            </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              {/* TODO: Add company description */}
-              [Brief description of the real estate business and services]
-            </p>
-            <div className="text-sm text-gray-400">
-              {/* TODO: Add office address */}
-              <div>[Office Address]</div>
-              <div>[City, State ZIP]</div>
-            </div>
+                <Link href="/" className="inline-block mb-6">
+                  <img 
+                    src="https://www.realestatebycherylnj.com/logos/weichert-logo.svg" 
+                    alt="Weichert Realtors Logo" 
+                    className="h-8 w-auto filter brightness-0 invert"
+                  />
+                </Link>
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  Licensed real estate agent with Weichert Realtors, serving Morris County and surrounding areas with over 9 years of experience.
+                </p>
+                <div className="text-sm text-gray-400">
+                  <div>1625 Route 10 East</div>
+                  <div>Morris Plains, NJ 07950</div>
+                </div>
           </div>
 
           {/* Navigate */}
@@ -118,16 +117,14 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold text-gold uppercase tracking-wider mb-6">Contact</h4>
             <div className="space-y-4 text-sm text-gray-400">
-              <div>
-                <span className="font-semibold text-white">T:</span>
-                {/* TODO: Add phone number */}
-                <span className="ml-2">[Phone]</span>
-              </div>
-              <div>
-                <span className="font-semibold text-white">E:</span>
-                {/* TODO: Add email */}
-                <span className="ml-2">[Email]</span>
-              </div>
+                  <div>
+                    <span className="font-semibold text-white">T:</span>
+                    <span className="ml-2">(908) 334-0971</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-white">E:</span>
+                    <span className="ml-2">yournjrealtor1@gmail.com</span>
+                  </div>
             </div>
             <div className="mt-6">
               <h5 className="text-xs font-semibold text-gold uppercase tracking-wider mb-4">Follow Us</h5>
@@ -167,10 +164,9 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-xs">
-              {/* TODO: Update copyright text */}
-              © {currentYear} [Agent/Company Name]. All rights reserved.
-            </div>
+                <div className="text-gray-400 text-xs">
+                  © {currentYear} Cheryl Towey - Weichert Realtors. All rights reserved.
+                </div>
             <div className="flex flex-wrap justify-center gap-6 text-xs">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-gold transition-colors">
                 Privacy Policy

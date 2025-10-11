@@ -14,16 +14,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray">
+    <nav className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container-max">
         <div className="flex justify-between items-center py-2 md:py-6 md:justify-center md:relative">
           {/* Logo - TODO: Replace with actual logo */}
-          <Link href="/" className="flex items-center md:absolute md:left-4 lg:left-8 py-2 md:py-0">
-            <div className="text-2xl text-black tracking-tight">
-              {/* TODO: Add logo image here */}
-              <span className="block font-serif font-extralight">REAL ESTATE</span>
-              <span className="text-sm font-extralight text-gray-dark">Professional Services</span>
-            </div>
+          <Link href="/" className="flex items-center md:absolute md:left-4 lg:left-8 py-2 md:py-0 z-10">
+            <img 
+              src="https://www.realestatebycherylnj.com/logos/weichert-logo.svg" 
+              alt="Weichert Realtors Logo" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation - Centered */}
@@ -43,8 +43,11 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-black hover:text-gold hover:bg-gray-light"
+            className="md:hidden p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-10 relative"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
             <svg
               className="w-6 h-6"
@@ -73,7 +76,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray py-4">
+          <div className="md:hidden border-t border-gray py-4 bg-white">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
