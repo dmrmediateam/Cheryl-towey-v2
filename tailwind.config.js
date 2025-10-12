@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         // Luxury Gold Palette
         gold: {
-          DEFAULT: '#d4af37',  // Luxury gold light
+          DEFAULT: '#b89649',  // Main gold from realestatebycherylnj.com
           light: '#d4af37',
           dark: '#b8860b',
         },
@@ -30,14 +30,16 @@ module.exports = {
       fontFamily: {
         // Varela for body text
         sans: ['Varela', 'system-ui', 'sans-serif'],
-        // Bodoni Moda for headings
-        serif: ['Bodoni Moda', 'serif'],
+        // Playfair Display for hero/elegant headings
+        serif: ['Playfair Display', 'serif'],
+        // Bodoni Moda for other headings
         heading: ['Bodoni Moda', 'serif'],
         body: ['Varela', 'sans-serif'],
       },
       animation: {
         'fade-in-left': 'fadeInLeft 0.6s ease-out',
         'fade-in-left-slow': 'fadeInLeftSlow 0.8s ease-out',
+        'fade-in-up': 'fadeInUp 0.8s ease-out',
       },
       keyframes: {
         fadeInLeft: {
@@ -47,6 +49,10 @@ module.exports = {
         fadeInLeftSlow: {
           '0%': { opacity: '0', transform: 'translateX(-50px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

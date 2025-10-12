@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Luxury Fonts - Bodoni Moda (Headings) & Varela (Body) */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Varela&display=swap');
+/* Luxury Fonts - Playfair Display (Hero/Headings), Bodoni Moda & Varela (Body) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Varela&display=swap');
 
 :root {
   /* Off-Black & Off-White */
@@ -11,6 +11,7 @@
   --off-white: #faf9f7;
   
   /* Luxury Gold */
+  --gold: #b89649;
   --gold-light: #d4af37;
   --gold-dark: #b8860b;
   
@@ -79,6 +80,18 @@
   }
 }
 
+/* Fade In Up Animation - For Hero Heading */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInLeftSlow {
   from {
     opacity: 0;
@@ -99,6 +112,11 @@
 .fade-in-left-slow {
   opacity: 0;
   animation: fadeInLeftSlow 0.8s ease-out forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 /* Stagger animation delays for multiple elements */
