@@ -1,10 +1,25 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Bodoni_Moda, Varela } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ScrollAnimations from '@/components/ScrollAnimations'
 
-const inter = Inter({ subsets: ['latin'] })
+// Bodoni Moda for headings - Elegant luxury serif
+const bodoniModa = Bodoni_Moda({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-bodoni',
+  display: 'swap',
+})
+
+// Varela for body text - Clean, modern sans-serif
+const varela = Varela({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-varela',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Cheryl Towey - Real Estate Professional',
@@ -18,8 +33,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${bodoniModa.variable} ${varela.variable}`}>
+      <body className={varela.className}>
+        <ScrollAnimations />
         <Navbar />
         <main className="min-h-screen">
           {children}

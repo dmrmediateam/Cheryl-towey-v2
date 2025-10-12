@@ -14,34 +14,34 @@ const CallToAction = () => {
       </div>
 
       <div className="relative z-10 container-max text-center text-white">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light mb-8">
+            <h2 className="scroll-animate text-3xl sm:text-4xl lg:text-5xl font-serif font-light mb-8 text-white">
               Ready to Find Your Dream Home?
             </h2>
-            <p className="text-lg sm:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="scroll-animate text-base sm:text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
               Let Cheryl Towey guide you through New Jersey's premier real estate market with expertise, dedication, and personalized service
             </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
+        <div className="scroll-animate grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
           <div>
             {/* TODO: Add actual stat */}
-            <div className="text-5xl font-serif font-light mb-2 text-secondary">250+</div>
-            <div className="text-sm uppercase tracking-widest text-white">Homes Sold</div>
+            <div className="text-4xl font-serif font-light mb-2 text-secondary">250+</div>
+            <div className="text-xs uppercase tracking-widest text-white">Homes Sold</div>
           </div>
           <div>
             {/* TODO: Add actual stat */}
-            <div className="text-5xl font-serif font-light mb-2 text-secondary">10+</div>
-            <div className="text-sm uppercase tracking-widest text-white">Years Experience</div>
+            <div className="text-4xl font-serif font-light mb-2 text-secondary">10+</div>
+            <div className="text-xs uppercase tracking-widest text-white">Years Experience</div>
           </div>
           <div>
             {/* TODO: Add actual stat */}
-            <div className="text-5xl font-serif font-light mb-2 text-secondary">5.0</div>
-            <div className="text-sm uppercase tracking-widest text-white">Client Rating</div>
+            <div className="text-4xl font-serif font-light mb-2 text-secondary">5.0</div>
+            <div className="text-xs uppercase tracking-widest text-white">Client Rating</div>
           </div>
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="scroll-animate flex flex-col sm:flex-row gap-6 justify-center">
           <Link href="/listings" className="btn-primary">
             View Listings
           </Link>

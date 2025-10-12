@@ -5,7 +5,7 @@ import { schemaTypes } from './sanity/schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Lauer Realty Blog',
+  title: 'Cheryl Towey Real Estate Website Blog',
 
   projectId: 'cs56ipyy',
   dataset: 'production',

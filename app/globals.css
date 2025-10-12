@@ -2,52 +2,231 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+/* Luxury Fonts - Bodoni Moda (Headings) & Varela (Body) */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Varela&display=swap');
+
+:root {
+  /* Off-Black & Off-White */
+  --off-black: #1a1a1a;
+  --off-white: #faf9f7;
+  
+  /* Luxury Gold */
+  --gold-light: #d4af37;
+  --gold-dark: #b8860b;
+  
+  /* Gray Shades */
+  --gray-light: #f5f4f2;
+  --gray-medium: #e8e6e3;
+  --gray-dark: #5a5a5a;
+}
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Varela', system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   
   body {
-    @apply text-gray-900 bg-white;
+    @apply bg-[--off-white] text-[--off-black];
     margin: 0;
     padding: 0;
+    color: var(--off-black);
+    background-color: var(--off-white);
   }
   
   * {
     box-sizing: border-box;
   }
+
+  /* Headings with Bodoni Moda */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    color: var(--off-black);
+  }
+  
+  h1 {
+    @apply text-5xl sm:text-6xl;
+  }
+  
+  h2 {
+    @apply text-4xl sm:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl sm:text-2xl;
+  }
+
+  /* Body text with Varela */
+  p, span, div, a, button, input, textarea, label {
+    font-family: 'Varela', sans-serif;
+  }
+}
+
+/* Fade In From Left Animation */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeftSlow {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation Classes - Apply to elements you want to animate */
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.fade-in-left-slow {
+  opacity: 0;
+  animation: fadeInLeftSlow 0.8s ease-out forwards;
+}
+
+/* Stagger animation delays for multiple elements */
+.fade-in-left-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-in-left-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-in-left-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.fade-in-left-delay-4 {
+  animation-delay: 0.4s;
+}
+
+/* Scroll-triggered animation - Add this class via JavaScript on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @layer components {
+  /* Primary Button with 80% opacity hover */
   .btn-primary {
-    @apply bg-gold hover:bg-gold-dark text-white font-bold py-4 px-10 rounded-sm transition-all duration-200 uppercase tracking-wider text-base;
+    background-color: var(--gold-light);
+    color: var(--off-white);
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-family: 'Varela', sans-serif;
   }
   
+  .btn-primary:hover {
+    background-color: var(--gold-dark);
+    opacity: 0.8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+  
+  /* Outline Button with 80% opacity hover */
   .btn-outline {
-    @apply border-2 border-gold text-gold hover:bg-gold hover:text-white font-bold py-4 px-10 rounded-sm transition-all duration-200 uppercase tracking-wider text-base;
+    border: 2px solid var(--gold-light);
+    color: var(--gold-dark);
+    background-color: transparent;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Varela', sans-serif;
   }
   
+  .btn-outline:hover {
+    background-color: var(--gold-light);
+    color: var(--off-white);
+    opacity: 0.8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Button animations */
+  .btn-primary,
+  .btn-outline {
+    animation: fadeInLeft 0.6s ease-out;
+  }
+  
+  /* Card Hover Effect */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    transition: all 0.4s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(26, 26, 26, 0.1);
   }
   
+  /* Section Padding */
   .section-padding {
     @apply py-20 px-4 sm:px-6 lg:px-8;
   }
   
+  /* Container Max Width */
   .container-max {
     @apply max-w-7xl mx-auto;
   }
 
+  /* Heading with Gold Line */
   .heading-line {
-    @apply inline-block relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-16 after:h-0.5 after:bg-gold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.75rem;
+  }
+
+  .heading-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 64px;
+    height: 2px;
+    background-color: var(--gold-light);
   }
   
-  /* Sleek Underline Design - Cheryl Style */
+  /* Centered Heading Underline - Luxury Style */
   .heading-underline {
-    @apply relative inline-block;
+    position: relative;
+    display: inline-block;
   }
   
   .heading-underline::after {
@@ -56,40 +235,183 @@
     bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 80px;
     height: 2px;
-    background: rgb(194, 168, 120);
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--gold-light) 20%, 
+      var(--gold-dark) 50%, 
+      var(--gold-light) 80%, 
+      transparent
+    );
   }
   
+  /* Left-aligned Heading Underline */
+  .heading-underline-left {
+    position: relative;
+    display: inline-block;
+  }
+
   .heading-underline-left::after {
     content: '';
     position: absolute;
     bottom: -12px;
     left: 0;
-    width: 60px;
+    width: 80px;
     height: 2px;
-    background: rgb(194, 168, 120);
+    background: linear-gradient(90deg, 
+      var(--gold-dark), 
+      var(--gold-light), 
+      transparent
+    );
   }
   
-  /* Section Headings with Sophisticated Font */
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+  /* Text Gold Color */
+  .text-gold {
+    color: var(--gold-light);
   }
-  
-  h1 {
-    @apply text-5xl sm:text-6xl font-light;
+
+  .text-gold-dark {
+    color: var(--gold-dark);
   }
-  
-  h2 {
-    @apply text-4xl sm:text-5xl font-light;
+
+  /* Background Gold */
+  .bg-gold {
+    background-color: var(--gold-light);
   }
-  
-  h3 {
-    @apply text-2xl sm:text-3xl font-light;
+
+  .bg-gold-dark {
+    background-color: var(--gold-dark);
   }
-  
-  /* Text Secondary Color from Cheryl Website */
-  .text-secondary {
-    color: rgb(194, 168, 120);
+
+  /* Off-White Background */
+  .bg-off-white {
+    background-color: var(--off-white);
   }
+
+  /* Off-Black Text */
+  .text-off-black {
+    color: var(--off-black);
+  }
+
+  /* Animated Text - Fade in from left */
+  .animate-text {
+    animation: fadeInLeft 0.6s ease-out;
+  }
+
+  .animate-text-slow {
+    animation: fadeInLeftSlow 0.8s ease-out;
+  }
+
+  /* Link Hover Effects */
+  a {
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  /* Input Focus Styles */
+  input:focus,
+  textarea:focus {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 2px;
+  }
+
+  /* Selection Color */
+  ::selection {
+    background-color: var(--gold-light);
+    color: var(--off-white);
+  }
+
+  ::-moz-selection {
+    background-color: var(--gold-light);
+    color: var(--off-white);
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Animation Utilities */
+  .animation-fast {
+    animation-duration: 0.4s;
+  }
+
+  .animation-normal {
+    animation-duration: 0.6s;
+  }
+
+  .animation-slow {
+    animation-duration: 0.8s;
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-smooth-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover Opacity */
+  .hover-opacity-80:hover {
+    opacity: 0.8;
+  }
+
+  /* Text Gradient Gold */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Scroll-based Animation Setup */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-animate {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-animate.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading State Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    var(--gray-light) 0%,
+    var(--gray-medium) 20%,
+    var(--gray-light) 40%,
+    var(--gray-light) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
 }

@@ -62,10 +62,10 @@ const ContactForm = () => {
     <section className="section-padding bg-gray-light">
       <div className="container-max">
             <div className="text-center mb-20">
-              <h2 className="text-4xl sm:text-5xl font-serif font-light text-black mb-4 heading-underline pb-4">
+              <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
                 Contact Us
               </h2>
-              <p className="text-lg text-gray-dark max-w-3xl mx-auto mt-8">
+              <p className="scroll-animate text-base text-gray-dark max-w-3xl mx-auto mt-8">
                 We would be delighted to assist you with your luxury real estate needs.
               </p>
             </div>
@@ -73,8 +73,8 @@ const ContactForm = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Info */}
-            <div>
-                  <h3 className="text-3xl font-serif font-light text-black mb-2">
+            <div className="scroll-animate">
+                  <h3 className="text-2xl font-serif font-light text-black mb-2">
                     Contact Cheryl
                   </h3>
               <div className="w-16 h-0.5 bg-secondary mb-8"></div>
@@ -82,26 +82,26 @@ const ContactForm = () => {
               <div className="space-y-8 mb-12">
                     <div>
                       <div className="text-xs text-secondary uppercase tracking-widest mb-3 font-semibold">Phone</div>
-                      <div className="text-xl font-serif font-light text-black">908.334.0971</div>
+                      <div className="text-lg font-serif font-light text-black">908.334.0971</div>
                     </div>
                     <div>
                       <div className="text-xs text-secondary uppercase tracking-widest mb-3 font-semibold">Email</div>
-                      <div className="text-xl font-serif font-light text-black">yournjrealtor1@gmail.com</div>
+                      <div className="text-lg font-serif font-light text-black">yournjrealtor1@gmail.com</div>
                     </div>
                     <div>
                       <div className="text-xs text-secondary uppercase tracking-widest mb-3 font-semibold">Office</div>
-                      <div className="text-xl font-serif font-light text-black">1625 NJ-10 East, Morris Plains, NJ 07950</div>
+                      <div className="text-lg font-serif font-light text-black">1625 NJ-10 East, Morris Plains, NJ 07950</div>
                     </div>
               </div>
 
-              <p className="text-gray-dark leading-relaxed text-base">
+              <p className="text-gray-dark leading-relaxed text-sm">
                 I'm dedicated to providing you with personalized service for all your real estate needs in Hackettstown, Andover, Byram, Blairstown, Chester, and Washington.
               </p>
             </div>
 
             {/* Contact Form */}
-            <div>
-              <h3 className="text-3xl font-serif font-light text-black mb-2">Send a Message</h3>
+            <div className="scroll-animate">
+              <h3 className="text-2xl font-serif font-light text-black mb-2">Send a Message</h3>
               <div className="w-16 h-0.5 bg-secondary mb-8"></div>
               
               <form onSubmit={handleSubmit} className="space-y-6">

@@ -11,10 +11,10 @@ const MarketInsights = async () => {
       <div className="container-max">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-serif font-light text-black mb-4 heading-underline pb-4">
+          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
             Market Insights & Resources
           </h2>
-          <p className="text-lg text-gray-dark max-w-3xl mx-auto mt-8">
+          <p className="scroll-animate text-base text-gray-dark max-w-3xl mx-auto mt-8">
             Informed perspectives and essential resources for navigating New Jersey's luxury real estate landscape in Cheryl's service areas.
           </p>
         </div>
@@ -26,7 +26,7 @@ const MarketInsights = async () => {
               <Link 
                 key={post._id}
                 href={`/blog/${post.slug.current}`}
-                className="group bg-white border border-gray rounded-sm overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="scroll-animate group bg-white border border-gray rounded-sm overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative h-48 bg-gray-light overflow-hidden">
                   <img 
@@ -39,14 +39,14 @@ const MarketInsights = async () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-medium text-black mb-3 group-hover:text-gold transition-colors duration-200">
+                  <h3 className="text-base font-medium text-black mb-3 group-hover:text-gold transition-colors duration-200">
                     {post.title}
                   </h3>
-                  <p className="text-gray-dark text-sm leading-relaxed mb-4">
+                  <p className="text-gray-dark text-xs leading-relaxed mb-4">
                     {post.description}
                   </p>
                   <div className="flex items-center text-black group-hover:text-gold transition-colors duration-200">
-                    <span className="text-sm mr-2">Read More</span>
+                    <span className="text-xs mr-2">Read More</span>
                     <span>→</span>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const MarketInsights = async () => {
         )}
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="scroll-animate text-center">
           <Link 
             href="/blog" 
             className="btn-outline"
