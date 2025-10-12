@@ -1,36 +1,10 @@
 import Link from 'next/link';
+import { getAllBlogPosts } from '@/data/blogPosts';
 
-const MarketInsights = () => {
-  const insights = [
-    {
-      title: 'Morris County NJ Homes: Complete Guide to Towns & Schools',
-      category: 'Market Report',
-      description: 'Morris County NJ homes average $696K with top schools, 35-min NYC commutes. Guide covers Morristown, Madison, Chatham, property taxes, and buying strategies.',
-      link: '/blog/morris-county-nj-homes-complete-buyers-guide',
-      image: '/images/326804e30db4dd3a9bf3ba35ee1c0298b4a99898-1024x1024.webp',
-    },
-    {
-      title: 'Townhouses vs Condos vs Single-Family Homes NJ: Analysis',
-      category: 'Investment Guide',
-      description: 'Compare NJ townhouses ($365K), condos ($362K), and single-family homes ($434K). HOA fees, appreciation rates, maintenance costs, and lifestyle factors analyzed.',
-      link: '/blog/townhouses-vs-condos-vs-single-family-homes-nj-investment-lifestyle',
-      image: '/images/3cfeb6bd5fbb3b6f71ee93217ed93290f9277ecd-1024x1024.webp',
-    },
-    {
-      title: 'New Construction Homes Under $400K in New Jersey',
-      category: 'Market Report',
-      description: 'Find new homes under $400K in NJ: D.R. Horton, Ryan Homes, Lennar developments in Camden, Atlantic, Burlington counties. Builder incentives save $10-30K.',
-      link: '/blog/new-construction-homes-under-400k-new-jersey-2025',
-      image: '/images/77926513c9fa8b1efd39b7cd5bb238016518da33-1024x1024.webp',
-    },
-    {
-      title: 'The Complete New Jersey Real Estate Market Guide 2025',
-      category: 'Market Report',
-      description: 'The Complete New Jersey Real Estate Market Guide 2025: Counties, Trends, and Buyer Strategies',
-      link: '/blog/new-jersey-real-estate-market-2025-county-trends-buyer-guide',
-      image: '/images/f8bfc16550357fbca976cfbf0a7bb421b977c51f-1024x1024.webp',
-    },
-  ];
+const MarketInsights = async () => {
+  // Fetch latest 4 blog posts from Sanity
+  const allPosts = await getAllBlogPosts();
+  const insights = allPosts.slice(0, 4);
 
   return (
     <section className="section-padding bg-white">
@@ -46,38 +20,46 @@ const MarketInsights = () => {
         </div>
 
         {/* Insights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {insights.map((insight, index) => (
-            <Link 
-              key={index}
-              href={insight.link}
-              className="group bg-white border border-gray rounded-sm overflow-hidden hover:shadow-xl transition-all duration-300"
-            >
-              <div className="relative h-48 bg-gray-light overflow-hidden">
-                <img 
-                  src={insight.image} 
-                  alt={insight.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4 bg-gold text-white px-3 py-1 text-xs uppercase tracking-wider">
-                  {insight.category}
+        {insights.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {insights.map((post) => (
+              <Link 
+                key={post._id}
+                href={`/blog/${post.slug.current}`}
+                className="group bg-white border border-gray rounded-sm overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative h-48 bg-gray-light overflow-hidden">
+                  <img 
+                    src={post.mainImage.asset.url} 
+                    alt={post.mainImage.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4 bg-gold text-white px-3 py-1 text-xs uppercase tracking-wider">
+                    {post.category}
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-medium text-black mb-3 group-hover:text-gold transition-colors duration-200">
-                  {insight.title}
-                </h3>
-                <p className="text-gray-dark text-sm leading-relaxed mb-4">
-                  {insight.description}
-                </p>
-                <div className="flex items-center text-black group-hover:text-gold transition-colors duration-200">
-                  <span className="text-sm mr-2">Read More</span>
-                  <span>→</span>
+                <div className="p-6">
+                  <h3 className="text-lg font-medium text-black mb-3 group-hover:text-gold transition-colors duration-200">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-dark text-sm leading-relaxed mb-4">
+                    {post.description}
+                  </p>
+                  <div className="flex items-center text-black group-hover:text-gold transition-colors duration-200">
+                    <span className="text-sm mr-2">Read More</span>
+                    <span>→</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-dark text-lg">
+              Blog posts coming soon. Check back for market insights and real estate resources.
+            </p>
+          </div>
+        )}
 
         {/* CTA */}
         <div className="text-center">
