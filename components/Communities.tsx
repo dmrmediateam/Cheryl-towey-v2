@@ -1,6 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const Communities = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
   const serviceAreas = [
     { 
       name: 'Hackettstown', 
@@ -35,54 +42,68 @@ const Communities = () => {
   ];
 
   return (
-    <section className="section-padding bg-gray-light">
+    <section ref={sectionRef} className="section-padding bg-gray-light">
       <div className="container-max">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
             Our Locations
           </h2>
-          <p className="scroll-animate text-base text-gray-dark max-w-3xl mx-auto mt-8">
+          <p className="text-base text-gray-dark max-w-3xl mx-auto mt-8">
             Discover exceptional properties in New Jersey's most prestigious communities
           </p>
-        </div>
+        </motion.div>
 
         {/* Service Areas Content */}
         <div className="max-w-5xl mx-auto">
-            
-
           {/* Service Areas Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {serviceAreas.map((area, index) => (
-              <Link
+              <motion.div
                 key={index}
-                href={`/communities/${area.slug}`}
-                className="scroll-animate bg-white p-6 rounded-sm border-l-4 border-gold hover:shadow-lg hover:border-gold-dark transition-all duration-200 group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
               >
-                <h4 className="text-lg font-serif font-light text-black mb-3 group-hover:text-gold transition-colors duration-200">
-                  {area.name}
-                </h4>
-                <p className="text-gray-dark text-xs leading-relaxed">
-                  {area.description}
-                </p>
-                <div className="mt-4 text-gold text-sm flex items-center group-hover:translate-x-2 transition-transform duration-200">
-                  View Properties
-                  <span className="ml-2">→</span>
-                </div>
-              </Link>
+                <Link
+                  href={`/communities/${area.slug}`}
+                  className="block bg-white p-6 rounded-sm border-l-4 border-gold hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:border-gold-dark transition-all duration-700 group shadow-[0_4px_12px_rgba(0,0,0,0.05)]"
+                >
+                  <h4 className="text-lg font-serif font-light text-black mb-3 group-hover:text-gold transition-colors duration-700">
+                    {area.name}
+                  </h4>
+                  <p className="text-gray-dark text-xs leading-relaxed">
+                    {area.description}
+                  </p>
+                  <div className="mt-4 text-gold text-sm flex items-center group-hover:translate-x-2 transition-transform duration-700">
+                    View Properties
+                    <span className="ml-2">→</span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="scroll-animate text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.7 }}
+            className="text-center"
+          >
             <Link 
               href="/listings" 
-              className="inline-flex items-center text-black hover:text-gold transition-colors duration-200 border-b-2 border-gold pb-1 text-base"
+              className="inline-flex items-center text-black hover:text-gold transition-all duration-700 border-b-2 border-gold pb-1 text-base hover:border-gold-dark"
             >
               View Properties
               <span className="ml-2">→</span>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

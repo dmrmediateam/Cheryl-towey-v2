@@ -1,10 +1,23 @@
+'use client';
+
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const Hero = () => {
+  const sectionRef = useRef(null);
+  const { scrollY } = useScroll();
+  
+  // Parallax effect - video moves slower than content
+  const videoY = useTransform(scrollY, [0, 500], [0, 150]);
+
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 overflow-hidden">
+    <section ref={sectionRef} className="relative h-screen flex items-center overflow-hidden">
+      {/* Video Background with Parallax */}
+      <motion.div 
+        className="absolute inset-0 overflow-hidden"
+        style={{ y: videoY }}
+      >
         <video
           className="absolute inset-0 w-full h-full object-cover object-center scale-[1.2]"
           src="https://redesign-media.s3.eu-north-1.amazonaws.com/michaud-rauer/581sagee.mp4"
@@ -13,7 +26,7 @@ const Hero = () => {
           muted
           playsInline
         />
-      </div>
+      </motion.div>
       
       {/* Black Gradient Overlay from Left */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 via-30% to-black/50"></div>
@@ -21,29 +34,61 @@ const Hero = () => {
       {/* Content - Left Aligned */}
       <div className="relative z-10 text-left text-white px-6 sm:px-12 lg:px-20 max-w-7xl">
         {/* Hero Name with Gold Accent Line */}
-        <div className="inline-block mb-8 fade-in-up">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-serif font-light tracking-[-0.03em] text-white relative pb-4">
+        <div className="inline-block mb-8">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-serif font-light tracking-[-0.03em] text-white relative pb-4"
+          >
             Cheryl Towey
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-[2px] bg-gold"></span>
-          </h1>
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.8, duration: 0.7, ease: 'easeOut' }}
+              className="absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-[2px] bg-gold origin-center"
+            />
+          </motion.h1>
         </div>
         
-        <h2 className="text-xl sm:text-2xl lg:text-3xl mb-6 tracking-wide font-serif font-light text-white fade-in-left fade-in-left-delay-2">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
+          className="text-xl sm:text-2xl lg:text-3xl mb-6 tracking-wide font-serif font-light text-white"
+        >
           Weichert Realtors
-        </h2>
-        <p className="text-sm sm:text-base mb-10 text-white tracking-wide fade-in-left fade-in-left-delay-3">
+        </motion.h2>
+        
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: 'easeOut' }}
+          className="text-sm sm:text-base mb-10 text-white tracking-wide"
+        >
           New Jersey • Hackettstown • Andover • Byram • Blairstown • Chester • Washington
-        </p>
+        </motion.p>
         
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 items-start fade-in-left fade-in-left-delay-4">
-          <Link href="/listings" className="btn-primary w-full sm:w-auto text-xs sm:text-sm text-white">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8, ease: 'easeOut' }}
+          className="flex flex-col sm:flex-row gap-4 items-start"
+        >
+          <Link 
+            href="/listings" 
+            className="btn-primary w-full sm:w-auto text-xs sm:text-sm text-white transition-all duration-700 hover:shadow-[0_0_20px_rgba(184,150,73,0.6)]"
+          >
             View Listings
           </Link>
-          <Link href="/contact" className="btn-outline border-2 border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-xs sm:text-sm font-semibold">
+          <Link 
+            href="/contact" 
+            className="btn-outline border-2 border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-xs sm:text-sm font-semibold transition-all duration-700"
+          >
             Contact Us
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
