@@ -154,16 +154,36 @@ const Footer = () => {
                   </div>
             </div>
             <div className="mt-6">
-              <h5 className="text-xs font-semibold text-gold uppercase tracking-wider mb-4">Follow Us</h5>
+              <h5 className="text-xs font-semibold text-gold uppercase tracking-wider mb-4">Find Me On</h5>
               <div className="flex space-x-3">
-                {/* TODO: Add actual social media links */}
-                <a href="#" className="w-8 h-8 border border-gray-600 hover:border-gold hover:bg-gold text-white hover:text-black rounded-sm flex items-center justify-center transition-all text-sm">
-                  L
+                {/* LinkedIn */}
+                <a 
+                  href="https://www.linkedin.com/in/cheryl-towey-35384864/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Visit Cheryl Towey on LinkedIn"
+                  className="w-8 h-8 border border-gray-600 hover:border-gold hover:bg-gold text-white hover:text-black rounded-sm flex items-center justify-center transition-all text-sm font-semibold"
+                >
+                  in
                 </a>
-                <a href="#" className="w-8 h-8 border border-gray-600 hover:border-gold hover:bg-gold text-white hover:text-black rounded-sm flex items-center justify-center transition-all text-sm">
+                {/* Zillow */}
+                <a 
+                  href="https://www.zillow.com/profile/ctowey" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="View Cheryl Towey on Zillow"
+                  className="w-8 h-8 border border-gray-600 hover:border-gold hover:bg-gold text-white hover:text-black rounded-sm flex items-center justify-center transition-all text-sm font-semibold"
+                >
                   Z
                 </a>
-                <a href="#" className="w-8 h-8 border border-gray-600 hover:border-gold hover:bg-gold text-white hover:text-black rounded-sm flex items-center justify-center transition-all text-sm">
+                {/* Realtor.com */}
+                <a 
+                  href="https://www.realtor.com/realestateagents/5697f23489a68901006bd439" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Find Cheryl Towey on Realtor.com"
+                  className="w-8 h-8 border border-gray-600 hover:border-gold hover:bg-gold text-white hover:text-black rounded-sm flex items-center justify-center transition-all text-sm font-semibold"
+                >
                   R
                 </a>
               </div>

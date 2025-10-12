@@ -17,11 +17,11 @@ const MeetAgent = () => {
         {/* Agent Profile */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           {/* Agent Image */}
-          <div className="scroll-animate order-2 lg:order-1 overflow-hidden rounded-sm">
+          <div className="scroll-animate order-2 lg:order-1 relative overflow-hidden shadow-lg">
             <img 
               src="/images/cheryl.webp" 
               alt="Cheryl Towey - Real Estate Agent" 
-              className="w-full h-auto aspect-square object-cover object-center"
+              className="w-full h-auto aspect-square object-cover object-center scale-[1.05] transition-transform duration-700 hover:scale-[1.1]"
             />
           </div>
 
