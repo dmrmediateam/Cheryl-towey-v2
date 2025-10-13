@@ -72,17 +72,22 @@ const Communities = () => {
               >
                 <Link
                   href={`/communities/${area.slug}`}
-                  className="block bg-white p-6 rounded-sm border-l-4 border-gold hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:border-gold-dark transition-all duration-700 group shadow-[0_4px_12px_rgba(0,0,0,0.05)]"
+                  className="block bg-white p-6 rounded-sm border-l-4 border-gold hover:shadow-[0_4px_20px_rgba(184,150,73,0.25)] hover:border-gold-dark hover:-translate-y-1 transition-all duration-700 group shadow-[0_4px_12px_rgba(0,0,0,0.05)] relative overflow-hidden"
                 >
-                  <h4 className="text-lg font-serif font-light text-black mb-3 group-hover:text-gold transition-colors duration-700">
-                    {area.name}
-                  </h4>
-                  <p className="text-gray-dark text-xs leading-relaxed">
-                    {area.description}
-                  </p>
-                  <div className="mt-4 text-gold text-sm flex items-center group-hover:translate-x-2 transition-transform duration-700">
-                    View Properties
-                    <span className="ml-2">→</span>
+                  {/* Subtle gold gradient that appears on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    <h4 className="text-lg font-serif font-light text-black mb-3 group-hover:text-gold transition-colors duration-700">
+                      {area.name}
+                    </h4>
+                    <p className="text-gray-dark text-xs leading-relaxed">
+                      {area.description}
+                    </p>
+                    <div className="mt-4 text-gold text-sm flex items-center group-hover:translate-x-2 transition-transform duration-700">
+                      View Properties
+                      <span className="ml-2 inline-block group-hover:translate-x-1 transition-transform duration-700">→</span>
+                    </div>
                   </div>
                 </Link>
               </motion.div>

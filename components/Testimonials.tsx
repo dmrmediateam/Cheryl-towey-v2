@@ -103,7 +103,7 @@ const Testimonials = () => {
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center transition-all duration-500 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
               {/* Client Info Card */}
               <div className="lg:col-span-4 relative">
-                <div className="bg-white p-8 rounded-sm shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-500">
+                <div className="bg-white p-8 rounded-sm shadow-xl border border-gray-200 hover:shadow-2xl hover:scale-[1.02] transition-all duration-700 group">
                   {/* Rating Stars */}
                   <div className="flex justify-center mb-6 gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -151,7 +151,7 @@ const Testimonials = () => {
 
               {/* Testimonial Content Card */}
               <div className="lg:col-span-8 relative">
-                <div className="bg-white p-10 md:p-12 rounded-sm shadow-2xl border-t-4 border-gold relative overflow-hidden group hover:shadow-3xl transition-all duration-500">
+                <div className="bg-white p-10 md:p-12 rounded-sm shadow-2xl border-t-4 border-gold relative overflow-hidden group hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:scale-[1.01] transition-all duration-700">
                   {/* Background Decoration */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-gold opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity duration-500"></div>
                   

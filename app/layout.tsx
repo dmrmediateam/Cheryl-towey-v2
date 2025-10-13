@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import ScrollProgressBar from '@/components/ScrollProgressBar'
 
 // Bodoni Moda for headings - Elegant luxury serif
 const bodoniModa = Bodoni_Moda({ 
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bodoniModa.variable} ${varela.variable}`}>
       <body className={varela.className}>
+        <ScrollProgressBar />
         <ScrollAnimations />
         <Navbar />
         <main className="min-h-screen">

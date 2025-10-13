@@ -478,3 +478,35 @@
   background-size: 1000px 100%;
   animation: shimmer 2s infinite linear;
 }
+
+/* Subtle cursor glow on interactive elements */
+@media (hover: hover) {
+  .btn-primary:hover,
+  .btn-outline:hover,
+  a.text-gold:hover {
+    cursor: pointer;
+  }
+}
+
+/* Smooth page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-transition {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Enhanced gold glow utility class */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(184, 150, 73, 0.4);
+}
+
+.gold-glow-strong {
+  box-shadow: 0 0 30px rgba(184, 150, 73, 0.6);
+}

@@ -359,9 +359,11 @@ const ContactForm = () => {
                 transition={{ delay: 1, duration: 0.6 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base py-4"
+                className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base py-4 group relative overflow-hidden hover:shadow-[0_0_30px_rgba(184,150,73,0.5)] hover:-translate-y-0.5"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                <span className="relative z-10">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                {/* Shimmer effect on hover */}
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
               </motion.button>
             </form>
           </motion.div>
