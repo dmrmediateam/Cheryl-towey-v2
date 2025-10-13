@@ -37,52 +37,68 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Hidden, using menu instead */}
-          <div className="hidden">
-            {navigation.map((item) => (
+          {/* Right Side - Desktop Nav + Menu Button */}
+          <div className="flex items-center gap-8">
+            {/* Desktop Navigation - Only visible on lg+ screens */}
+            <div className="hidden lg:flex items-center gap-8">
               <Link
-                key={item.name}
-                href={item.href}
-                className="text-black hover:text-secondary font-serif text-sm transition-colors duration-200 relative group tracking-wide"
+                href="/buyers"
+                className="text-black hover:text-gold font-serif text-sm transition-colors duration-200 relative group tracking-wide"
                 style={{ fontWeight: 300 }}
               >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                Buyers
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </Link>
-            ))}
-          </div>
+              <Link
+                href="/sellers"
+                className="text-black hover:text-gold font-serif text-sm transition-colors duration-200 relative group tracking-wide"
+                style={{ fontWeight: 300 }}
+              >
+                Sellers
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link
+                href="/listings"
+                className="text-black hover:text-gold font-serif text-sm transition-colors duration-200 relative group tracking-wide"
+                style={{ fontWeight: 300 }}
+              >
+                Listings
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </div>
 
-          {/* Menu button - Right aligned on all screens */}
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-50 relative transition-colors duration-200"
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            {/* Menu button - Right aligned on all screens */}
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-50 relative transition-colors duration-200"
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
