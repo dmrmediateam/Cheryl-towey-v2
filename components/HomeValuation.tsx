@@ -30,32 +30,58 @@ export default function HomeValuation() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate with actual email service or CRM
-    console.log('Home Valuation Request:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        address: '',
-        city: '',
-        state: 'NJ',
-        zipCode: '',
-        propertyType: 'single-family',
-        bedrooms: '',
-        bathrooms: '',
-        squareFeet: '',
-        yearBuilt: '',
-        message: '',
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/home-valuation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 5000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit valuation request');
+      }
+
+      // Success!
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          address: '',
+          city: '',
+          state: 'NJ',
+          zipCode: '',
+          propertyType: 'single-family',
+          bedrooms: '',
+          bathrooms: '',
+          squareFeet: '',
+          yearBuilt: '',
+          message: '',
+        });
+      }, 5000);
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsSubmitting(false);
+      // Show error to user
+      alert(error instanceof Error ? error.message : 'Failed to submit request. Please try again or contact us directly at 908.334.0971');
+    }
   };
 
   if (isSubmitted) {
@@ -398,9 +424,10 @@ export default function HomeValuation() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold-dark text-white font-semibold py-4 px-8 rounded-sm transition-all duration-200 hover:shadow-lg text-sm uppercase tracking-wider"
+                  disabled={isSubmitting}
+                  className="w-full bg-gold hover:bg-gold-dark text-white font-semibold py-4 px-8 rounded-sm transition-all duration-200 hover:shadow-lg text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Request Free Home Valuation
+                  {isSubmitting ? 'Sending Request...' : 'Request Free Home Valuation'}
                 </button>
                 <p className="text-xs text-gray-400 text-center mt-4">
                   By submitting this form, you agree to be contacted by Cheryl Towey regarding your property valuation.

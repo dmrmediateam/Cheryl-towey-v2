@@ -27,7 +27,7 @@ export default function AboutPage() {
             {/* Agent Image */}
             <div className="scroll-animate">
               <img 
-                src="https://www.realestatebycherylnj.com/about/cheryl-towey-headshot.jpg" 
+                src="/images/cheryl-towey.jpg" 
                 alt="Cheryl Towey - New Jersey Real Estate Agent" 
                 className="w-full rounded-sm shadow-lg"
               />

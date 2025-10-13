@@ -28,21 +28,42 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // TODO: Integrate with email service or backend API
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      // Success!
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset form after showing success message
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      }, 3000);
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsSubmitting(false);
+      // Show error to user
+      alert(error instanceof Error ? error.message : 'Failed to send message. Please try again or contact us directly.');
+    }
   };
 
   if (isSubmitted) {

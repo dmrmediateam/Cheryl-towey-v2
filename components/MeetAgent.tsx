@@ -46,7 +46,7 @@ const MeetAgent = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent z-10 pointer-events-none"></div>
             
             <img 
-              src="/images/cheryl.webp" 
+              src="/images/cheryl-towey.jpg" 
               alt="Cheryl Towey - Real Estate Agent" 
               className="w-full h-auto aspect-square object-cover object-center scale-[1.05] transition-transform duration-700 group-hover:scale-[1.1]"
             />
