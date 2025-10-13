@@ -172,6 +172,34 @@ const Navbar = () => {
                   Contact
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-700 group-hover:w-full"></span>
                 </Link>
+
+                {/* Legal Section */}
+                <div className="pt-6 pb-8 border-t border-gray-300 mt-6">
+                  <div className="text-xs uppercase tracking-widest text-gray-dark mb-3">Legal</div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    <Link
+                      href="/privacy-policy"
+                      className="text-xs font-serif font-light text-gray-dark hover:text-gold transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Privacy Policy
+                    </Link>
+                    <Link
+                      href="/accessibility"
+                      className="text-xs font-serif font-light text-gray-dark hover:text-gold transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Accessibility
+                    </Link>
+                    <Link
+                      href="/terms-and-conditions"
+                      className="text-xs font-serif font-light text-gray-dark hover:text-gold transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Terms & Conditions
+                    </Link>
+                  </div>
+                </div>
               </div>
 
               {/* Right Side - Contact Information */}
