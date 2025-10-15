@@ -13,29 +13,107 @@ export default function ByramPage() {
     { label: 'Average Price/SqFt', value: '$215' },
   ];
 
+  const communityFeatures = [
+    {
+      title: 'Lakeside Living',
+      description: 'Central areas near Lake Mohawk and Cranberry Lake feature casual dining and community spots for lakeside relaxation.',
+      icon: '🏊‍♀️'
+    },
+    {
+      title: 'Quality Education',
+      description: 'Byram Township School District delivers above-average education with a favorable 14:1 student-teacher ratio.',
+      icon: '🎓'
+    },
+    {
+      title: 'Outdoor Adventure',
+      description: 'C.O. Johnson Park playgrounds, Sussex Branch Trail biking paths, and abundant recreational opportunities.',
+      icon: '🌲'
+    },
+    {
+      title: 'Community Events',
+      description: 'Byram Day with live music, Holiday Tree Lighting, and nearby Sussex County Fair create lasting memories.',
+      icon: '🎪'
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
           <h1 className="scroll-animate text-4xl sm:text-5xl font-serif font-light text-black mb-6 heading-underline pb-4">
-            Homes for Sale in Byram
+            Discover Byram, NJ
+            <span className="block text-2xl sm:text-3xl text-secondary mt-2">Lakeside Suburban Haven - Buy and Sell Byram Homes</span>
           </h1>
-          <p className="scroll-animate text-base text-gray-dark leading-relaxed max-w-4xl">
-            Experience the charm of Byram Township, New Jersey - a desirable Sussex County community known for its excellent schools and family-friendly neighborhoods. Byram offers a perfect blend of suburban comfort and natural beauty, with beautiful lakefront properties, modern developments, and spacious family homes. Residents enjoy top-rated schools, abundant parks and recreational facilities, and convenient access to shopping and major highways.
-          </p>
+          <div className="scroll-animate prose max-w-none">
+            <p className="text-base text-gray-dark leading-relaxed mb-6">
+              Byram, the "Township of Lakes," with approximately 8,082 residents enjoying a rural yet suburban feel. Byram is renowned for its scenic waters and family-friendly vibe, it's a peaceful retreat for young professionals and families alike. Allow me to help you navigate the process of buying or selling a home in this wonderful community. Byram's natural beauty and strong real estate market make it a top Northwest NJ destination.
+            </p>
+            <p className="text-base text-gray-dark leading-relaxed">
+              Byram's central areas near Lake Mohawk and Cranberry Lake feature casual dining and community spots, perfect for lakeside relaxation and neighborly gatherings. Events like Byram Day with live music and food trucks create a festive atmosphere. Homes near these hubs offer easy access to boating and local eateries, ideal for those seeking a water-centric, connected lifestyle.
+            </p>
+          </div>
+          
+          <div className="flex gap-4 flex-wrap mt-8">
+            <Link href="/contact" className="btn-primary">
+              Schedule Lakeside Property Tour
+            </Link>
+            <Link href="/communities/byram/market-report" className="btn-outline">
+              View Market Report
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Residents Love Byram */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-12 text-center">
+            Why Residents Love Byram - Lakeside and Communal Charm Just 50 Miles from NYC
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div className="scroll-animate">
+              <h3 className="text-2xl font-serif font-light text-black mb-4">
+                Excellence in Education
+              </h3>
+              <p className="text-base text-gray-dark leading-relaxed">
+                Byram's schools, part of the Byram Township School District, deliver above-average education with a 14:1 student-teacher ratio. I would be happy to help you find homes in top school zones for your family's success. The district's commitment to personalized learning creates an environment where students thrive academically and socially.
+              </p>
+            </div>
+            
+            <div className="scroll-animate">
+              <h3 className="text-2xl font-serif font-light text-black mb-4">
+                Outdoor Recreation and Community Appeal
+              </h3>
+              <p className="text-base text-gray-dark leading-relaxed">
+                From C.O. Johnson Park's playgrounds and trails to the Sussex Branch Trail's biking paths, Byram blends nature with adventure. The Holiday Tree Lighting and nearby Sussex County Fair add seasonal spirit. Homes near these lakes and parks suit buyers seeking a peaceful yet active lifestyle in Northwest NJ.
+              </p>
+            </div>
+          </div>
+
+          {/* Community Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {communityFeatures.map((feature, index) => (
+              <div key={index} className="scroll-animate text-center p-6 bg-gray-light rounded-sm">
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h4 className="text-lg font-serif font-light text-black mb-3">{feature.title}</h4>
+                <p className="text-sm text-gray-dark leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Market Statistics */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-light">
         <div className="container-max">
           <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-12 text-center">
-            Market Statistics
+            Current Market Statistics
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {marketStats.map((stat, index) => (
-              <div key={index} className="scroll-animate text-center p-6 bg-gray-light rounded-sm">
+              <div key={index} className="scroll-animate text-center p-6 bg-white rounded-sm shadow-sm">
                 <div className="text-3xl font-serif font-light text-secondary mb-2">
                   {stat.value}
                 </div>
@@ -45,36 +123,55 @@ export default function ByramPage() {
               </div>
             ))}
           </div>
+          
+          <div className="text-center mt-8">
+            <Link href="/communities/byram/market-report" className="btn-outline">
+              View Complete Market Report
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Properties Listing Placeholder */}
-      <section className="section-padding bg-gray-light">
+      {/* Properties Listing */}
+      <section className="section-padding bg-white">
         <div className="container-max">
-          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-12">
-            Available Properties
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4">
+              Available Properties in Byram
+            </h2>
+            <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto">
+              Discover your perfect lakeside retreat in the "Township of Lakes," from waterfront properties to modern suburban homes near top-rated schools.
+            </p>
+          </div>
           
-          {/* Placeholder Grid */}
+          {/* Properties Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="scroll-animate bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                <div className="h-64 bg-gray-300 flex items-center justify-center">
+              <div key={item} className="scroll-animate bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border">
+                <div className="h-64 bg-gray-300 flex items-center justify-center relative">
                   <span className="text-gray-dark text-sm">Property Image</span>
+                  <div className="absolute top-4 left-4 bg-secondary text-white px-2 py-1 text-xs rounded">
+                    Lakeside Living
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="text-2xl font-serif font-light text-black mb-2">
                     $XXX,XXX
                   </div>
-                  <div className="text-sm text-gray-dark mb-4">
+                  <div className="text-sm text-gray-dark mb-2">
                     X bd | X ba | X,XXX sqft
                   </div>
                   <div className="text-sm text-gray-dark mb-4">
-                    123 Main Street, Byram, NJ
+                    123 Lake View Drive, Byram, NJ
                   </div>
-                  <button className="btn-primary w-full text-xs">
-                    View Details
-                  </button>
+                  <div className="flex gap-2">
+                    <button className="btn-primary flex-1 text-xs py-2">
+                      View Details
+                    </button>
+                    <button className="btn-outline flex-1 text-xs py-2">
+                      Schedule Tour
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -82,8 +179,37 @@ export default function ByramPage() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <Link href="/contact" className="btn-primary">
-              Contact Cheryl for More Listings
+            <Link href="/properties" className="btn-primary mr-4">
+              View All Properties
+            </Link>
+            <Link href="/contact" className="btn-outline">
+              Contact Cheryl for Lakefront Listings
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="section-padding bg-secondary text-white">
+        <div className="container-max text-center">
+          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light mb-6">
+            Ready to Experience Lakeside Living?
+          </h2>
+          <p className="scroll-animate text-base leading-relaxed max-w-3xl mx-auto mb-8">
+            Let me help you discover the perfect property in Byram's "Township of Lakes." From waterfront homes to family-friendly neighborhoods near excellent schools, I'll guide you to your ideal Northwest New Jersey lakeside lifestyle.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link 
+              href="/contact" 
+              className="bg-white text-secondary px-8 py-3 rounded-sm font-light text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors"
+            >
+              Start Your Lakeside Search
+            </Link>
+            <Link 
+              href="/communities" 
+              className="border border-white text-white px-8 py-3 rounded-sm font-light text-sm uppercase tracking-widest hover:bg-white hover:text-secondary transition-colors"
+            >
+              Explore Other Communities
             </Link>
           </div>
         </div>

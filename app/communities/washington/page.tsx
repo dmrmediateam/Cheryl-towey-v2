@@ -13,29 +13,107 @@ export default function WashingtonPage() {
     { label: 'Average Price/SqFt', value: '$190' },
   ];
 
+  const communityFeatures = [
+    {
+      title: 'Historic Downtown',
+      description: 'West Washington Avenue features historic Victorians and local gems like Muheisen\'s Bagel & Deli for community gatherings.',
+      icon: '🏛️'
+    },
+    {
+      title: 'Quality Education',
+      description: 'Washington Borough and Township districts deliver quality education with 11:1 student-teacher ratio and Niche B-rated schools.',
+      icon: '🎓'
+    },
+    {
+      title: 'Nature & Recreation',
+      description: 'Roaring Rock Park hiking trails and Pohatcong Native Arboretum scenic paths blend nature with community spirit.',
+      icon: '🌲'
+    },
+    {
+      title: 'Community Events',
+      description: 'Warren County Farmers\' Fair with balloon rides, Holiday Tree Lighting, and Fairway Valley Golf Club add local excitement.',
+      icon: '🎪'
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
           <h1 className="scroll-animate text-4xl sm:text-5xl font-serif font-light text-black mb-6 heading-underline pb-4">
-            Homes for Sale in Washington
+            Discover Washington, NJ
+            <span className="block text-2xl sm:text-3xl text-secondary mt-2">Affordable Community Charm - Buy and Sell Washington Homes</span>
           </h1>
-          <p className="scroll-animate text-base text-gray-dark leading-relaxed max-w-4xl">
-            Explore Washington, New Jersey - a Warren County community with beautiful properties and convenient access to major highways. Known for its friendly atmosphere and strategic location, Washington offers a variety of housing options from charming older homes to modern new construction. The borough provides excellent schools, shopping centers, restaurants, and easy commuting access to Route 31, I-78, and I-80, making it ideal for families and professionals alike.
-          </p>
+          <div className="scroll-animate prose max-w-none">
+            <p className="text-base text-gray-dark leading-relaxed mb-6">
+              Washington, a welcoming Warren County community with approximately 14,575 residents across its borough and township, blends affordable living with small-town warmth. Renowned for its historic charm and family-friendly vibe, it's a haven for first-time buyers and families. Allow me, Cheryl Towey, your Weichert Realtors expert, to help you navigate the process of buying or selling a home in this wonderful community. Washington's inviting appeal and strong real estate market make it a top Northwest NJ destination.
+            </p>
+            <p className="text-base text-gray-dark leading-relaxed">
+              Washington's downtown along West Washington Avenue features historic Victorians and local gems like Muheisen's Bagel & Deli, perfect for community gatherings and cozy dining. Events like the Warren County Farmers' Fair and Holiday Tree Lighting create a festive atmosphere. Homes near these hubs offer walkable access to local charm, ideal for those seeking an affordable, connected lifestyle.
+            </p>
+          </div>
+          
+          <div className="flex gap-4 flex-wrap mt-8">
+            <Link href="/contact" className="btn-primary">
+              Schedule Affordable Home Tour
+            </Link>
+            <Link href="/communities/washington/market-report" className="btn-outline">
+              View Market Report
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Residents Love Washington */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-12 text-center">
+            Why Residents Love Washington
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div className="scroll-animate">
+              <h3 className="text-2xl font-serif font-light text-black mb-4">
+                Quality Education for Families
+              </h3>
+              <p className="text-base text-gray-dark leading-relaxed">
+                Washington's schools, spanning the Washington Borough and Township districts, deliver quality education with an 11:1 student-teacher ratio. Taylor Street School and Brass Castle (Niche: B) support young learners, while Warren Hills Regional High School offers robust academics and athletics. I would be happy to help you find homes in top school zones for your family's success.
+              </p>
+            </div>
+            
+            <div className="scroll-animate">
+              <h3 className="text-2xl font-serif font-light text-black mb-4">
+                Outdoor Recreation and Community Appeal
+              </h3>
+              <p className="text-base text-gray-dark leading-relaxed">
+                From Roaring Rock Park's hiking trails to the Pohatcong Native Arboretum's scenic paths, Washington blends nature with community spirit. The annual Farmers' Fair with balloon rides and nearby Fairway Valley Golf Club add local excitement. Homes near these parks and events suit buyers seeking an affordable yet active lifestyle in Northwest NJ.
+              </p>
+            </div>
+          </div>
+
+          {/* Community Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {communityFeatures.map((feature, index) => (
+              <div key={index} className="scroll-animate text-center p-6 bg-gray-light rounded-sm">
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h4 className="text-lg font-serif font-light text-black mb-3">{feature.title}</h4>
+                <p className="text-sm text-gray-dark leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Market Statistics */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-light">
         <div className="container-max">
           <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-12 text-center">
-            Market Statistics
+            Current Market Statistics
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {marketStats.map((stat, index) => (
-              <div key={index} className="scroll-animate text-center p-6 bg-gray-light rounded-sm">
+              <div key={index} className="scroll-animate text-center p-6 bg-white rounded-sm shadow-sm">
                 <div className="text-3xl font-serif font-light text-secondary mb-2">
                   {stat.value}
                 </div>
@@ -45,36 +123,55 @@ export default function WashingtonPage() {
               </div>
             ))}
           </div>
+          
+          <div className="text-center mt-8">
+            <Link href="/communities/washington/market-report" className="btn-outline">
+              View Complete Market Report
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Properties Listing Placeholder */}
-      <section className="section-padding bg-gray-light">
+      {/* Properties Listing */}
+      <section className="section-padding bg-white">
         <div className="container-max">
-          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-12">
-            Available Properties
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4">
+              Available Properties in Washington
+            </h2>
+            <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto">
+              Discover your perfect affordable home in this welcoming Warren County community, from historic Victorian properties to modern family residences.
+            </p>
+          </div>
           
-          {/* Placeholder Grid */}
+          {/* Properties Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="scroll-animate bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                <div className="h-64 bg-gray-300 flex items-center justify-center">
+              <div key={item} className="scroll-animate bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border">
+                <div className="h-64 bg-gray-300 flex items-center justify-center relative">
                   <span className="text-gray-dark text-sm">Property Image</span>
+                  <div className="absolute top-4 left-4 bg-secondary text-white px-2 py-1 text-xs rounded">
+                    Affordable Charm
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="text-2xl font-serif font-light text-black mb-2">
                     $XXX,XXX
                   </div>
-                  <div className="text-sm text-gray-dark mb-4">
+                  <div className="text-sm text-gray-dark mb-2">
                     X bd | X ba | X,XXX sqft
                   </div>
                   <div className="text-sm text-gray-dark mb-4">
-                    123 Main Street, Washington, NJ
+                    123 West Washington Ave, Washington, NJ
                   </div>
-                  <button className="btn-primary w-full text-xs">
-                    View Details
-                  </button>
+                  <div className="flex gap-2">
+                    <button className="btn-primary flex-1 text-xs py-2">
+                      View Details
+                    </button>
+                    <button className="btn-outline flex-1 text-xs py-2">
+                      Schedule Tour
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -82,8 +179,37 @@ export default function WashingtonPage() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <Link href="/contact" className="btn-primary">
-              Contact Cheryl for More Listings
+            <Link href="/properties" className="btn-primary mr-4">
+              View All Properties
+            </Link>
+            <Link href="/contact" className="btn-outline">
+              Contact Cheryl for Affordable Listings
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="section-padding bg-secondary text-white">
+        <div className="container-max text-center">
+          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light mb-6">
+            Ready to Find Your Affordable Dream Home?
+          </h2>
+          <p className="scroll-animate text-base leading-relaxed max-w-3xl mx-auto mb-8">
+            Let me help you discover the perfect property in Washington's welcoming Warren County community. From historic Victorian homes to modern family residences near excellent schools, I'll guide you to your ideal affordable Northwest New Jersey lifestyle.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link 
+              href="/contact" 
+              className="bg-white text-secondary px-8 py-3 rounded-sm font-light text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors"
+            >
+              Start Your Affordable Search
+            </Link>
+            <Link 
+              href="/communities" 
+              className="border border-white text-white px-8 py-3 rounded-sm font-light text-sm uppercase tracking-widest hover:bg-white hover:text-secondary transition-colors"
+            >
+              Explore Other Communities
             </Link>
           </div>
         </div>
