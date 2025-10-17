@@ -35,6 +35,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${bodoniModa.variable} ${varela.variable}`}>
+      <head>
+        <script src="https://kestrel.idxhome.com/ihf-kestrel.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.ihfKestrel = window.ihfKestrel || {};
+              ihfKestrel.config = {
+                platform: "",
+                activationToken: "5bde82f9-6b1d-4223-b1a3-7b664e7c5a6e",
+              };
+            `,
+          }}
+        />
+      </head>
       <body className={varela.className}>
         <ScrollProgressBar />
         <ScrollAnimations />

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const SearchProperties = () => {
+export default function Listings() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,35 +31,35 @@ const SearchProperties = () => {
             }
           } catch (error) {
             console.error('iHomeFinder Kestrel error:', error);
-            document.currentScript.parentNode.innerHTML = '<div class="text-center p-8 text-gray-600">Property search temporarily unavailable. Please try again later.</div>';
+            document.currentScript.parentNode.innerHTML = '<div class="text-center p-8 text-gray-600">Property listings temporarily unavailable. Please try again later.</div>';
           }
         `;
         
         containerRef.current.appendChild(script);
-        console.log('iHomeFinder Kestrel search widget loaded');
+        console.log('iHomeFinder Kestrel widget loaded');
       } else {
         setError('iHomeFinder Kestrel not available');
       }
     } catch (err) {
-      console.error('Error loading iHomeFinder search widget:', err);
-      setError('Failed to load property search');
+      console.error('Error loading iHomeFinder widget:', err);
+      setError('Failed to load property listings');
     }
   }, [isClient]);
 
   if (!isClient) {
     return (
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-16">
-            <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
-              Search Properties
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Property Listings
             </h2>
-            <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto mt-8">
-              Find your dream home with our advanced search tools.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Browse available properties in our service areas with live MLS data.
             </p>
           </div>
-          <div className="scroll-animate w-full h-32 bg-gray-100 rounded-lg flex items-center justify-center">
-            <div className="text-gray-500">Loading property search...</div>
+          <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+            <div className="text-gray-500">Loading property listings...</div>
           </div>
         </div>
       </section>
@@ -67,19 +67,19 @@ const SearchProperties = () => {
   }
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
-            Search Properties
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Property Listings
           </h2>
-          <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto mt-8">
-            Find your dream home with our advanced search tools.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Browse available properties in our service areas with live MLS data.
           </p>
         </div>
 
-        {/* iHomeFinder Kestrel Search Widget */}
-        <div className="scroll-animate w-full" ref={containerRef}>
+        {/* iHomeFinder Kestrel Listings Widget */}
+        <div className="w-full" ref={containerRef}>
           {error && (
             <div className="text-center p-8 text-gray-600 bg-gray-50 rounded-lg">
               {error}
@@ -89,7 +89,4 @@ const SearchProperties = () => {
       </div>
     </section>
   );
-};
-
-export default SearchProperties;
-
+}

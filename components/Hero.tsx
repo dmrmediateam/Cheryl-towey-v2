@@ -20,7 +20,7 @@ const Hero = () => {
       >
         <video
           className="absolute inset-0 w-full h-full object-cover object-center scale-[1.2]"
-          src="https://redesign-media.s3.eu-north-1.amazonaws.com/michaud-rauer/581sagee.mp4"
+          src="/videos/mount-tamborine-drone-house-mansion-view-over-vall-2025-08-28-21-36-21-utc.mp4"
           autoPlay
           loop
           muted

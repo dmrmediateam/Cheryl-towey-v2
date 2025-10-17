@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const SearchProperties = () => {
+export default function SearchProperties() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -48,17 +48,17 @@ const SearchProperties = () => {
 
   if (!isClient) {
     return (
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-16">
-            <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Search Properties
             </h2>
-            <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto mt-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Find your dream home with our advanced search tools.
             </p>
           </div>
-          <div className="scroll-animate w-full h-32 bg-gray-100 rounded-lg flex items-center justify-center">
+          <div className="max-w-4xl mx-auto h-32 bg-gray-100 rounded-lg flex items-center justify-center">
             <div className="text-gray-500">Loading property search...</div>
           </div>
         </div>
@@ -67,19 +67,19 @@ const SearchProperties = () => {
   }
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4 heading-underline pb-4">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Search Properties
           </h2>
-          <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto mt-8">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Find your dream home with our advanced search tools.
           </p>
         </div>
 
         {/* iHomeFinder Kestrel Search Widget */}
-        <div className="scroll-animate w-full" ref={containerRef}>
+        <div className="max-w-4xl mx-auto" ref={containerRef}>
           {error && (
             <div className="text-center p-8 text-gray-600 bg-gray-50 rounded-lg">
               {error}
@@ -89,7 +89,5 @@ const SearchProperties = () => {
       </div>
     </section>
   );
-};
-
-export default SearchProperties;
+}
 
