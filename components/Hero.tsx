@@ -20,7 +20,7 @@ const Hero = () => {
       >
         <video
           className="absolute inset-0 w-full h-full object-cover object-center scale-[1.2]"
-          src="/videos/mount-tamborine-drone-house-mansion-view-over-vall-2025-08-28-21-36-21-utc.mp4"
+          src="/videos/young-couple-walking-outside-their-luxury-estate-1080p-2025-08-29-04-38-27-utc.mov"
           autoPlay
           loop
           muted
