@@ -14,8 +14,6 @@ const Navbar = () => {
   ];
 
   const communities = [
-    { name: 'Sussex County', href: '/communities/sussex-county' },
-    { name: 'Warren County', href: '/communities/warren-county' },
     { name: 'Hackettstown', href: '/communities/hackettstown' },
     { name: 'Andover', href: '/communities/andover' },
     { name: 'Byram', href: '/communities/byram' },

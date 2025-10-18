@@ -98,16 +98,6 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-gold uppercase tracking-wider mb-6">Communities</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/communities/sussex-county" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                  Sussex County
-                </Link>
-              </li>
-              <li>
-                <Link href="/communities/warren-county" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                  Warren County
-                </Link>
-              </li>
-              <li>
                 <Link href="/communities/hackettstown" className="text-gray-400 hover:text-gold transition-colors text-sm">
                   Hackettstown
                 </Link>

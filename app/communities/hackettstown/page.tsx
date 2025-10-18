@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CommunityProperties from '@/app/components/CommunityProperties';
 
 export const metadata = {
   title: 'Homes for Sale in Hackettstown, NJ | Cheryl Towey',
@@ -133,61 +134,7 @@ export default function HackettstownPage() {
       </section>
 
       {/* Properties Listing */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-12">
-            <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-4">
-              Available Properties in Hackettstown
-            </h2>
-            <p className="scroll-animate text-base text-gray-dark max-w-2xl mx-auto">
-              Discover your perfect home in this vibrant community, from historic downtown properties to modern family residences.
-            </p>
-          </div>
-          
-          {/* Properties Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="scroll-animate bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border">
-                <div className="h-64 bg-gray-300 flex items-center justify-center relative">
-                  <span className="text-gray-dark text-sm">Property Image</span>
-                  <div className="absolute top-4 left-4 bg-secondary text-white px-2 py-1 text-xs rounded">
-                    New Listing
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="text-2xl font-serif font-light text-black mb-2">
-                    $XXX,XXX
-                  </div>
-                  <div className="text-sm text-gray-dark mb-2">
-                    X bd | X ba | X,XXX sqft
-                  </div>
-                  <div className="text-sm text-gray-dark mb-4">
-                    123 Main Street, Hackettstown, NJ
-                  </div>
-                  <div className="flex gap-2">
-                    <button className="btn-primary flex-1 text-xs py-2">
-                      View Details
-                    </button>
-                    <button className="btn-outline flex-1 text-xs py-2">
-                      Schedule Tour
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <Link href="/properties" className="btn-primary mr-4">
-              View All Properties
-            </Link>
-            <Link href="/contact" className="btn-outline">
-              Contact Cheryl for Exclusive Listings
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CommunityProperties cityId={22626} cityName="Hackettstown" />
 
       {/* Call to Action */}
       <section className="section-padding bg-secondary text-white">
