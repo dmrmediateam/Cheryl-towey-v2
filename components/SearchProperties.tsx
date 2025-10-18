@@ -26,12 +26,11 @@ const SearchProperties = () => {
             if (window.ihfKestrel && window.ihfKestrel.render) {
               const widget = window.ihfKestrel.render({
                 "component": "propertiesGalleryWidget",
-                "cityId": 22648,
+                "cityId": 22626,
                 "propertyTypes": "SFR",
                 "status": "active",
                 "sort": "pd",
-                "resultsPerPage": 10,
-                "maxPrice": 1
+                "resultsPerPage": 10
               });
               if (widget) {
                 document.currentScript.parentNode.replaceChild(widget, document.currentScript);
