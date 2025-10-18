@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Bodoni_Moda, Varela } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -35,9 +36,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${bodoniModa.variable} ${varela.variable}`}>
-      <head>
-        <script src="https://kestrel.idxhome.com/ihf-kestrel.js"></script>
-        <script
+      <body className={varela.className}>
+        <Script
+          src="https://kestrel.idxhome.com/ihf-kestrel.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="ihf-kestrel-config"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.ihfKestrel = window.ihfKestrel || {};
@@ -48,8 +54,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className={varela.className}>
         <ScrollProgressBar />
         <ScrollAnimations />
         <Navbar />
