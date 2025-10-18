@@ -48,7 +48,7 @@ export default function RootLayout({
             __html: `
               window.ihfKestrel = window.ihfKestrel || {};
               ihfKestrel.config = {
-                platform: "",
+                platform: "Custom HTML",
                 activationToken: "5bde82f9-6b1d-4223-b1a3-7b664e7c5a6e",
               };
             `,
