@@ -24,7 +24,13 @@ export default function SearchProperties() {
         script.textContent = `
           try {
             if (window.ihfKestrel && window.ihfKestrel.render) {
-              const widget = window.ihfKestrel.render();
+              const widget = window.ihfKestrel.render({
+                "component": "featuredListingSearchWidget",
+                "propertyType": "SFR",
+                "status": "active",
+                "sort": "pd",
+                "resultsPerPage": 15
+              });
               if (widget) {
                 document.currentScript.parentNode.replaceChild(widget, document.currentScript);
               }
