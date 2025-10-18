@@ -25,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white sticky top-0 z-50">
+    <nav className="bg-white sticky top-0 z-[250]">
       <div className="container-max">
         <div className="flex justify-between items-center py-2 md:py-4">
           {/* Logo */}
@@ -71,7 +71,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-50 relative transition-colors duration-200"
+              className="p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-[250] relative transition-colors duration-200"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -104,7 +104,7 @@ const Navbar = () => {
 
       {/* Full Screen Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black bg-opacity-50 z-[240] transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMenuOpen(false)}
@@ -112,7 +112,7 @@ const Navbar = () => {
 
       {/* Full Screen Menu - Slides from Right */}
       <div
-        className={`fixed top-0 right-0 h-full w-full md:w-3/4 lg:w-2/3 bg-white z-40 shadow-2xl transition-transform duration-500 ease-out ${
+        className={`fixed top-0 right-0 h-full w-full md:w-3/4 lg:w-2/3 bg-white z-[250] shadow-2xl transition-transform duration-500 ease-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
