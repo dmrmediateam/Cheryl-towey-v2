@@ -25,11 +25,13 @@ export default function SearchProperties() {
           try {
             if (window.ihfKestrel && window.ihfKestrel.render) {
               const widget = window.ihfKestrel.render({
-                "component": "featuredListingSearchWidget",
-                "propertyType": "SFR",
+                "component": "propertiesGalleryWidget",
+                "cityId": 22648,
+                "propertyTypes": "SFR",
                 "status": "active",
                 "sort": "pd",
-                "resultsPerPage": 15
+                "resultsPerPage": 10,
+                "maxPrice": 1
               });
               if (widget) {
                 document.currentScript.parentNode.replaceChild(widget, document.currentScript);
