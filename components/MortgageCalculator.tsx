@@ -81,18 +81,16 @@ export default function MortgageCalculator() {
                   <label className="text-sm font-semibold text-black">Home Price</label>
                   <span className="text-gold font-mono text-sm">{formatCurrency(homePrice)}</span>
                 </div>
-                <input
-                  type="range"
-                  min="100000"
-                  max="2000000"
-                  step="10000"
-                  value={homePrice}
-                  onChange={(e) => setHomePrice(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gold"
-                />
-                <div className="flex justify-between text-xs text-gray-400 mt-1">
-                  <span>$100K</span>
-                  <span>$2M</span>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                  <input
+                    type="number"
+                    min={0}
+                    step={1000}
+                    value={homePrice}
+                    onChange={(e) => setHomePrice(Number(e.target.value || 0))}
+                    className="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-sm focus:outline-none focus:border-gold text-sm"
+                  />
                 </div>
               </div>
 
@@ -105,18 +103,17 @@ export default function MortgageCalculator() {
                     <span className="text-xs text-gray-400">({downPaymentPercent}%)</span>
                   </div>
                 </div>
-                <input
-                  type="range"
-                  min="0"
-                  max={homePrice * 0.5}
-                  step="5000"
-                  value={downPayment}
-                  onChange={(e) => setDownPayment(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gold"
-                />
-                <div className="flex justify-between text-xs text-gray-400 mt-1">
-                  <span>$0</span>
-                  <span>{formatCurrency(homePrice * 0.5)}</span>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                  <input
+                    type="number"
+                    min={0}
+                    max={homePrice}
+                    step={1000}
+                    value={downPayment}
+                    onChange={(e) => setDownPayment(Number(e.target.value || 0))}
+                    className="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-sm focus:outline-none focus:border-gold text-sm"
+                  />
                 </div>
               </div>
 
@@ -126,18 +123,17 @@ export default function MortgageCalculator() {
                   <label className="text-sm font-semibold text-black">Interest Rate</label>
                   <span className="text-gold font-mono text-sm">{interestRate.toFixed(2)}%</span>
                 </div>
-                <input
-                  type="range"
-                  min="2"
-                  max="12"
-                  step="0.1"
-                  value={interestRate}
-                  onChange={(e) => setInterestRate(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gold"
-                />
-                <div className="flex justify-between text-xs text-gray-400 mt-1">
-                  <span>2%</span>
-                  <span>12%</span>
+                <div className="relative">
+                  <input
+                    type="number"
+                    min={0}
+                    max={100}
+                    step={0.01}
+                    value={interestRate}
+                    onChange={(e) => setInterestRate(Number(e.target.value || 0))}
+                    className="w-full pr-10 pl-4 py-2 border border-gray-200 rounded-sm focus:outline-none focus:border-gold text-sm"
+                  />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">%</span>
                 </div>
               </div>
 
@@ -147,20 +143,17 @@ export default function MortgageCalculator() {
                   <label className="text-sm font-semibold text-black">Loan Term</label>
                   <span className="text-gold font-mono text-sm">{loanTerm} years</span>
                 </div>
-                <div className="grid grid-cols-3 gap-3">
-                  {[15, 20, 30].map((term) => (
-                    <button
-                      key={term}
-                      onClick={() => setLoanTerm(term)}
-                      className={`py-3 px-4 rounded-sm border-2 text-sm font-semibold transition-all duration-200 ${
-                        loanTerm === term
-                          ? 'border-gold bg-gold text-white'
-                          : 'border-gray-200 text-gray-dark hover:border-gold'
-                      }`}
-                    >
-                      {term} Years
-                    </button>
-                  ))}
+                <div className="relative max-w-xs">
+                  <input
+                    type="number"
+                    min={1}
+                    max={40}
+                    step={1}
+                    value={loanTerm}
+                    onChange={(e) => setLoanTerm(Number(e.target.value || 0))}
+                    className="w-full pl-4 pr-16 py-2 border border-gray-200 rounded-sm focus:outline-none focus:border-gold text-sm"
+                  />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">years</span>
                 </div>
               </div>
 

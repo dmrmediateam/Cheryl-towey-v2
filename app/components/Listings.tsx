@@ -17,8 +17,25 @@ export default function Listings() {
     try {
       // Check if ihfKestrel is available
       if (typeof window !== 'undefined' && (window as any).ihfKestrel) {
-        const ihfKestrel = (window as any).ihfKestrel;
-        
+        const originalReplaceState = history.replaceState;
+        // Wrap replaceState to guard cross-origin URL writes from the embedded widget
+        history.replaceState = function(state: any, title: string, url?: string | URL | null) {
+          try {
+            if (url) {
+              const target = new URL(String(url), window.location.href);
+              const currentOrigin = window.location.origin;
+              if (target.origin !== currentOrigin) {
+                // Ignore cross-origin replaceState attempts
+                return;
+              }
+            }
+            return originalReplaceState.apply(history, [state, title, url as any]);
+          } catch (e) {
+            // Ignore security errors from malformed/relative URLs
+            return;
+          }
+        } as any;
+
         // Create a script element to replace
         const script = document.createElement('script');
         script.textContent = `
@@ -37,6 +54,11 @@ export default function Listings() {
         
         containerRef.current.appendChild(script);
         console.log('iHomeFinder Kestrel widget loaded');
+
+        // Restore original history method on cleanup
+        return () => {
+          history.replaceState = originalReplaceState;
+        };
       } else {
         setError('iHomeFinder Kestrel not available');
       }

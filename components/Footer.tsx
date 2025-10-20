@@ -127,6 +127,11 @@ const Footer = () => {
                   Washington
                 </Link>
               </li>
+              <li>
+                <Link href="/communities/walpack" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                  Walpack
+                </Link>
+              </li>
             </ul>
           </div>
 

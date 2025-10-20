@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCommunitiesOpen, setIsCommunitiesOpen] = useState(false);
+  const [isMobileCommunitiesOpen, setIsMobileCommunitiesOpen] = useState(false);
 
   const navigation = [
     { name: 'Buyers', href: '/buyers' },
@@ -20,6 +22,7 @@ const Navbar = () => {
     { name: 'Blairstown', href: '/communities/blairstown' },
     { name: 'Chester', href: '/communities/chester' },
     { name: 'Washington', href: '/communities/washington' },
+    { name: 'Walpack', href: '/communities/walpack' },
   ];
 
   return (
@@ -55,6 +58,38 @@ const Navbar = () => {
                 Sellers
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </Link>
+              {/* Communities dropdown (click to expand) */}
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
+                  className="text-black hover:text-gold font-serif text-sm transition-colors duration-200 tracking-wide flex items-center gap-1"
+                  style={{ fontWeight: 300 }}
+                  aria-haspopup="menu"
+                  aria-expanded={isCommunitiesOpen}
+                >
+                  Communities
+                  <svg className={`w-4 h-4 transition-transform ${isCommunitiesOpen ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isCommunitiesOpen && (
+                  <div className="absolute right-0 mt-3 w-64 bg-white border border-gray-200 shadow-xl rounded-sm p-2 z-[300]">
+                    <div className="grid grid-cols-1 gap-1">
+                      {communities.map((community) => (
+                        <Link
+                          key={community.name}
+                          href={community.href}
+                          className="px-3 py-2 text-sm text-gray-dark hover:text-gold hover:bg-gray-light rounded-sm transition-colors"
+                          onClick={() => setIsCommunitiesOpen(false)}
+                        >
+                          {community.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link
                 href="/listings"
                 className="text-black hover:text-gold font-serif text-sm transition-colors duration-200 relative group tracking-wide"
@@ -131,24 +166,35 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-700 group-hover:w-full"></span>
                 </Link>
 
-                {/* Communities Section */}
+                {/* Communities Section (collapsible) */}
                 <div className="space-y-3">
-                  <div className="text-2xl md:text-3xl font-serif font-light text-black tracking-wide">
+                  <button
+                    type="button"
+                    className="text-2xl md:text-3xl font-serif font-light text-black tracking-wide flex items-center gap-2"
+                    onClick={() => setIsMobileCommunitiesOpen(!isMobileCommunitiesOpen)}
+                    aria-expanded={isMobileCommunitiesOpen}
+                    aria-controls="mobile-communities"
+                  >
                     Communities
-                  </div>
-                  <div className="pl-4 space-y-2">
-                    {communities.map((community) => (
-                      <Link
-                        key={community.name}
-                        href={community.href}
-                        className="block text-base md:text-lg font-serif font-light text-gray-dark hover:text-gold transition-all duration-700 relative group w-fit"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {community.name}
-                        <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-700 group-hover:w-full"></span>
-                      </Link>
-                    ))}
-                  </div>
+                    <svg className={`w-5 h-5 transition-transform ${isMobileCommunitiesOpen ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {isMobileCommunitiesOpen && (
+                    <div id="mobile-communities" className="pl-4 space-y-2">
+                      {communities.map((community) => (
+                        <Link
+                          key={community.name}
+                          href={community.href}
+                          className="block text-base md:text-lg font-serif font-light text-gray-dark hover:text-gold transition-all duration-700 relative group w-fit"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {community.name}
+                          <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-700 group-hover:w-full"></span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <Link
