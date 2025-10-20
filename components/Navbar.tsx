@@ -32,9 +32,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center py-2 md:py-0 z-10">
             <img 
-              src="/images/weichert-logo.svg" 
+              src="/62f3c630f8a08a45cbeff139_Weichert-Realtors-Centered-Bar-Logo-EHO.png" 
               alt="Weichert Realtors Logo" 
-              className="h-12 w-auto"
+              className="h-9 w-auto"
             />
           </Link>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-[250] relative transition-colors duration-200"
+              className="p-2 rounded-md text-black hover:text-gold hover:bg-gray-light z-[300] relative transition-colors duration-200"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
