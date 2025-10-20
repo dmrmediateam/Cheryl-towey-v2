@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center py-2 md:py-0 z-10">
             <img 
-              src="https://www.realestatebycherylnj.com/logos/weichert-logo.svg" 
+              src="/images/weichert-logo.svg" 
               alt="Weichert Realtors Logo" 
               className="h-12 w-auto"
             />
