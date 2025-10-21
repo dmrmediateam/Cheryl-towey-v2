@@ -2,6 +2,12 @@
 
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    ihfKestrel?: any;
+  }
+}
+
 export default function PropertyLayout({
   children,
 }: {

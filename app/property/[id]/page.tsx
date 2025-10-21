@@ -1,29 +1,32 @@
 import { Metadata } from 'next';
 
 interface PropertyPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     listingPhotoUrl?: string;
     listingPhotoWidth?: string;
     listingPhotoHeight?: string;
     listingAddress?: string;
     listingCity?: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ 
   params, 
   searchParams 
 }: PropertyPageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  
   const {
     listingPhotoUrl,
     listingPhotoWidth,
     listingPhotoHeight,
     listingAddress,
     listingCity
-  } = searchParams;
+  } = resolvedSearchParams;
 
   // Default values if not provided
   const address = listingAddress || 'Property';
@@ -59,14 +62,17 @@ export async function generateMetadata({
   };
 }
 
-export default function PropertyPage({ params, searchParams }: PropertyPageProps) {
+export default async function PropertyPage({ params, searchParams }: PropertyPageProps) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  
   const {
     listingPhotoUrl,
     listingPhotoWidth,
     listingPhotoHeight,
     listingAddress,
     listingCity
-  } = searchParams;
+  } = resolvedSearchParams;
 
   const address = listingAddress || 'Property';
   const city = listingCity || 'New Jersey';
