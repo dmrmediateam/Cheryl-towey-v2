@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
                 <Link href="/" className="inline-block mb-6">
                   <img 
-                    src="https://www.realestatebycherylnj.com/logos/weichert-logo.svg" 
+                    src="/62f3c630f8a08a45cbeff139_Weichert-Realtors-Centered-Bar-Logo-EHO.png" 
                     alt="Weichert Realtors Logo" 
                     className="h-8 w-auto filter brightness-0 invert"
                   />
