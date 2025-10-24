@@ -1,9 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 
-export const metadata = {
-  title: 'Homes for Sale in Andover, NJ | Cheryl Towey',
-  description: 'Browse luxury homes and real estate listings in Andover, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Homes for Sale in Andover, NJ | Real Estate by Cheryl Towey',
+  description: 'Browse homes for sale in Andover, NJ with Cheryl Towey. Discover this tranquil Sussex County community featuring historic charm, excellent schools, outdoor recreation, and affordable pricing.',
 };
 
 export default function AndoverPage() {

@@ -1,9 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 
-export const metadata = {
-  title: 'Homes for Sale in Hackettstown, NJ | Cheryl Towey',
-  description: 'Browse luxury homes and real estate listings in Hackettstown, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Homes for Sale in Hackettstown, NJ | Real Estate by Cheryl Towey',
+  description: 'Discover Hackettstown homes for sale with Cheryl Towey. Expert real estate listings in this vibrant Warren County community known for downtown living, excellent schools, and strong market values.',
 };
 
 export default function HackettstownPage() {

@@ -1,9 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 
-export const metadata = {
-  title: 'Homes for Sale in Byram, NJ | Cheryl Towey',
-  description: 'Browse luxury homes and real estate listings in Byram, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Homes for Sale in Byram, NJ | Real Estate by Cheryl Towey',
+  description: 'Find homes for sale in Byram, NJ with Cheryl Towey. Explore this lakeside suburb featuring Lake Mohawk, quality schools, outdoor recreation, and community events in Sussex County.',
 };
 
 export default function ByramPage() {

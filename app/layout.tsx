@@ -6,6 +6,13 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollAnimations from '@/components/ScrollAnimations'
 import ScrollProgressBar from '@/components/ScrollProgressBar'
+import { StructuredData, MultiStructuredData } from '@/app/components/StructuredData'
+import {
+  getRealEstateAgentSchema,
+  getLocalBusinessSchema,
+  getWebsiteSchema,
+  getOrganizationSchema,
+} from '@/lib/structuredData'
 
 // Bodoni Moda for headings - Elegant luxury serif
 const bodoniModa = Bodoni_Moda({ 
@@ -24,9 +31,25 @@ const varela = Varela({
 })
 
 export const metadata: Metadata = {
-  title: 'Cheryl Towey - Real Estate Professional',
-  description: 'Professional real estate services in New Jersey. Find your dream home with Cheryl Towey.',
-  keywords: 'real estate, New Jersey, homes for sale, property listings, Cheryl Towey',
+  title: 'Cheryl Towey - Real Estate Professional | NJ Homes',
+  description: 'Expert real estate services in Northwest New Jersey. Find homes in Hackettstown, Andover, Byram, Blairstown, Chester, and Washington. Trust Cheryl Towey for professional guidance.',
+  keywords: 'real estate, New Jersey, homes for sale, property listings, Cheryl Towey, Hackettstown, Andover, Byram, Blairstown, Chester, Washington',
+  openGraph: {
+    title: 'Cheryl Towey - Real Estate Professional',
+    description: 'Find your dream home in Northwest New Jersey with expert real estate services.',
+    url: 'https://www.realestatebycherylnj.com',
+    siteName: 'Cheryl Towey Real Estate',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cheryl Towey Real Estate',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
@@ -36,6 +59,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${bodoniModa.variable} ${varela.variable}`}>
+      <head>
+        {/* Global Structured Data */}
+        <MultiStructuredData
+          schemas={[
+            getOrganizationSchema(),
+            getRealEstateAgentSchema(),
+            getLocalBusinessSchema(),
+            getWebsiteSchema(),
+          ]}
+        />
+      </head>
       <body className={varela.className}>
         <Script
           src="https://kestrel.idxhome.com/ihf-kestrel.js"
