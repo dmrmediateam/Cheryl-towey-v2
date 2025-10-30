@@ -8,7 +8,7 @@ export const businessData = {
   url: 'https://www.realestatebycherylnj.com',
   phone: '+1-908-334-0971',
   email: 'cheryl@weichert.com',
-  image: 'https://www.realestatebycherylnj.com/images/cheryl-towey.jpg',
+  image: 'https://www.realestatebycherylnj.com/images/1752608667829.jpeg',
   logo: 'https://www.realestatebycherylnj.com/62f3c630f8a08a45cbeff139_Weichert-Realtors-Centered-Bar-Logo-EHO.png',
   address: {
     streetAddress: '1625 NJ-10 East',
