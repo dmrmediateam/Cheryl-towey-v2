@@ -9,6 +9,8 @@ import {
   getBreadcrumbSchema,
   getAggregateOfferSchema,
   getFAQSchema,
+  getServiceAreaSchema,
+  getProfessionalCredentialsSchema,
 } from '@/lib/structuredData'
 
 interface CommunityStructuredDataProps {
@@ -57,6 +59,8 @@ export function CommunityStructuredData({
     }),
     getBreadcrumbSchema(breadcrumbs),
     getAggregateOfferSchema(propertyStats),
+    getServiceAreaSchema(),
+    getProfessionalCredentialsSchema(),
   ]
 
   if (faqs && faqs.length > 0) {

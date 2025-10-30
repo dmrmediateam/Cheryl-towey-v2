@@ -8,7 +8,7 @@ import { MetadataRoute } from 'next';
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://realestatebycherylnj.com';
+  const baseUrl = 'https://www.realestatebycherylnj.com';
   
   // Current date for lastModified
   const currentDate = new Date();

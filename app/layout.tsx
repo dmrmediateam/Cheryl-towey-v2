@@ -31,24 +31,46 @@ const varela = Varela({
 })
 
 export const metadata: Metadata = {
-  title: 'Cheryl Towey - Real Estate Professional | NJ Homes',
-  description: 'Expert real estate services in Northwest New Jersey. Find homes in Hackettstown, Andover, Byram, Blairstown, Chester, and Washington. Trust Cheryl Towey for professional guidance.',
-  keywords: 'real estate, New Jersey, homes for sale, property listings, Cheryl Towey, Hackettstown, Andover, Byram, Blairstown, Chester, Washington',
+  title: 'Cheryl Towey - Licensed Real Estate Agent | Northwest New Jersey',
+  description: 'Licensed real estate professional serving Northwest New Jersey since 2010. Specializing in Hackettstown, Sussex County, Warren County. Weichert Realtors.',
+  keywords: 'licensed real estate agent New Jersey, Cheryl Towey realtor, Hackettstown homes for sale, Sussex County realtor, Warren County real estate, Morris Plains office',
+  authors: [{ name: 'Cheryl Towey', url: 'https://www.realestatebycherylnj.com' }],
+  creator: 'Cheryl Towey',
+  publisher: 'Weichert Realtors',
+  verification: {
+    google: 'google-site-verification-code', // Add actual verification code when available
+  },
   openGraph: {
-    title: 'Cheryl Towey - Real Estate Professional',
-    description: 'Find your dream home in Northwest New Jersey with expert real estate services.',
+    title: 'Cheryl Towey - Licensed Real Estate Agent NJ',
+    description: 'Find your dream home in Northwest New Jersey with experienced licensed agent Cheryl Towey.',
     url: 'https://www.realestatebycherylnj.com',
-    siteName: 'Cheryl Towey Real Estate',
+    siteName: 'Real Estate by Cheryl NJ',
     images: [
       {
-        url: 'https://www.realestatebycherylnj.com/og-image.jpg',
+        url: 'https://www.realestatebycherylnj.com/images/cheryl-towey.jpg',
         width: 1200,
         height: 630,
-        alt: 'Cheryl Towey Real Estate',
+        alt: 'Cheryl Towey - Licensed Real Estate Agent in Northwest New Jersey',
       },
     ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@cheryltoweyrealestate',
+    creator: '@cheryltoweyrealestate',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

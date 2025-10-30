@@ -1,10 +1,31 @@
 import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
 export const metadata: Metadata = {
-  title: 'Homes for Sale in Hackettstown, NJ | Real Estate by Cheryl Towey',
-  description: 'Discover Hackettstown homes for sale with Cheryl Towey. Expert real estate listings in this vibrant Warren County community known for downtown living, excellent schools, and strong market values.',
+  title: 'Hackettstown NJ Homes for Sale | Local Real Estate Agent Cheryl Towey | Warren County',
+  description: 'Search Hackettstown NJ homes for sale with local expert Cheryl Towey. Warren County real estate specialist. Downtown living, top schools, $465K median. Call 908-334-0971 for showings.',
+  keywords: 'Hackettstown NJ homes for sale, Warren County real estate, Hackettstown realtor, Main Street properties, downtown Hackettstown homes, NJ-182 corridor, Hackettstown school district',
+  openGraph: {
+    title: 'Hackettstown NJ Real Estate - Homes for Sale',
+    description: 'Find your dream home in historic Hackettstown, NJ. Local real estate expert Cheryl Towey specializes in Warren County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/hackettstown',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/hackettstown-downtown.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Downtown Hackettstown NJ - Main Street properties and homes for sale',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Hackettstown, Warren County, New Jersey',
+    'geo.position': '40.8584;-74.8282',
+    'ICBM': '40.8584, -74.8282',
+  },
 };
 
 export default function HackettstownPage() {
@@ -39,7 +60,17 @@ export default function HackettstownPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Hackettstown"
+        slug="hackettstown"
+        county="Warren"
+        population={10143}
+        medianPrice={465000}
+        distanceFromNYC="50 miles"
+        description="Hackettstown, known as the 'Mountain City,' is a charming Warren County town offering small-town warmth with modern vibrancy. Located 50 miles from NYC, this family-friendly community features downtown living, excellent schools, and strong property values."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -162,7 +193,8 @@ export default function HackettstownPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 
