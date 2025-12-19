@@ -1,9 +1,9 @@
+/* Luxury Fonts - Playfair Display (Hero/Headings), Bodoni Moda & Varela (Body) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Varela&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Luxury Fonts - Playfair Display (Hero/Headings), Bodoni Moda & Varela (Body) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Varela&display=swap');
 
 :root {
   /* Off-Black & Off-White */
