@@ -1,9 +1,31 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
-export const metadata = {
-  title: 'Homes for Sale in Walpack, NJ | Cheryl Towey',
-  description: 'Explore homes and real estate listings in Walpack, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Walpack NJ Homes for Sale | Sussex County Real Estate | Cheryl Towey',
+  description: 'Search Walpack NJ homes for sale with local expert Cheryl Towey. Sussex County nature retreat specialist. Delaware Water Gap access, secluded living. Call 908-334-0971.',
+  keywords: 'Walpack NJ homes for sale, Sussex County real estate, Delaware Water Gap homes, secluded NJ properties, nature retreat homes, Walpack Township',
+  openGraph: {
+    title: 'Walpack NJ Real Estate - Nature Retreat Homes',
+    description: 'Find your dream secluded home in Walpack, NJ. Local real estate expert Cheryl Towey specializes in Sussex County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/walpack',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/walpack.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Walpack NJ - Nature retreat homes near Delaware Water Gap',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Walpack, Sussex County, New Jersey',
+    'geo.position': '41.1287;-74.9076',
+    'ICBM': '41.1287, -74.9076',
+  },
 };
 
 export default function WalpackPage() {
@@ -22,7 +44,17 @@ export default function WalpackPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Walpack"
+        slug="walpack"
+        county="Sussex"
+        population={12}
+        medianPrice={525000}
+        distanceFromNYC="70 miles"
+        description="Walpack is a uniquely tranquil Sussex County township nestled within the Delaware Water Gap National Recreation Area. With preserved landscapes, limited development, and immediate access to trails and river activities, Walpack offers rare secluded, nature-forward living."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -97,7 +129,8 @@ export default function WalpackPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

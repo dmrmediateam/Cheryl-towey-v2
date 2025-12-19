@@ -1,9 +1,31 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
-export const metadata = {
-  title: 'Homes for Sale in Chester, NJ | Cheryl Towey',
-  description: 'Browse luxury homes and real estate listings in Chester, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Chester NJ Homes for Sale | Morris County Real Estate | Cheryl Towey',
+  description: 'Search Chester NJ homes for sale with local expert Cheryl Towey. Morris County upscale living specialist. Historic Main Street, top schools, $525K median. Call 908-334-0971.',
+  keywords: 'Chester NJ homes for sale, Morris County real estate, Chester realtor, historic Chester properties, Hacklebarney State Park area, upscale NJ homes',
+  openGraph: {
+    title: 'Chester NJ Real Estate - Upscale Homes for Sale',
+    description: 'Find your dream home in upscale Chester, NJ. Local real estate expert Cheryl Towey specializes in Morris County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/chester',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/chester.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Chester NJ - Upscale homes for sale in Morris County',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Chester, Morris County, New Jersey',
+    'geo.position': '40.7840;-74.6968',
+    'ICBM': '40.7840, -74.6968',
+  },
 };
 
 export default function ChesterPage() {
@@ -38,7 +60,17 @@ export default function ChesterPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Chester"
+        slug="chester"
+        county="Morris"
+        population={9400}
+        medianPrice={525000}
+        distanceFromNYC="55 miles"
+        description="Chester is an upscale Morris County community with about 9,400 residents. Known for its historic 19th-century Main Street, top-rated schools, Hacklebarney State Park, and vibrant community events like the Harvest Festival, Chester offers elegant suburban living."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -161,7 +193,8 @@ export default function ChesterPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

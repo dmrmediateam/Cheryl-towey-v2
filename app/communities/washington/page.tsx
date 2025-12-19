@@ -1,9 +1,31 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
-export const metadata = {
-  title: 'Homes for Sale in Washington, NJ | Cheryl Towey',
-  description: 'Browse luxury homes and real estate listings in Washington, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Washington NJ Homes for Sale | Warren County Real Estate | Cheryl Towey',
+  description: 'Search Washington NJ homes for sale with local expert Cheryl Towey. Warren County affordable living specialist. Historic downtown, $415K median. Call 908-334-0971.',
+  keywords: 'Washington NJ homes for sale, Warren County real estate, Washington Township properties, affordable NJ homes, Roaring Rock Park area, Warren County Farmers Fair',
+  openGraph: {
+    title: 'Washington NJ Real Estate - Affordable Homes for Sale',
+    description: 'Find your dream home in Washington, NJ. Local real estate expert Cheryl Towey specializes in Warren County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/washington',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/washington.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Washington NJ - Affordable homes for sale in Warren County',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Washington, Warren County, New Jersey',
+    'geo.position': '40.7587;-74.9793',
+    'ICBM': '40.7587, -74.9793',
+  },
 };
 
 export default function WashingtonPage() {
@@ -38,7 +60,17 @@ export default function WashingtonPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Washington"
+        slug="washington"
+        county="Warren"
+        population={14575}
+        medianPrice={415000}
+        distanceFromNYC="45 miles"
+        description="Washington combines borough and township communities with about 14,575 residents in Warren County. Known for historic downtown Victorians, affordable housing, quality schools, Roaring Rock Park trails, and the Warren County Farmers' Fair, Washington offers excellent value."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -161,7 +193,8 @@ export default function WashingtonPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

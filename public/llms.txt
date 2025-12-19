@@ -1,0 +1,105 @@
+# Cheryl Towey - Real Estate Agent
+> Licensed New Jersey Real Estate Agent specializing in Northwest NJ properties
+
+## About
+Cheryl Towey is a licensed real estate agent with Weichert Realtors, serving Northwest New Jersey since 2010. She specializes in residential real estate in Sussex County, Warren County, and Morris County, helping buyers find their dream homes and sellers maximize their property value.
+
+## Contact Information
+- Name: Cheryl Towey
+- Company: Weichert Realtors
+- Phone: 908-334-0971
+- Email: cheryl@weichert.com
+- Website: https://www.realestatebycherylnj.com
+- Office Address: 1625 NJ-10 East, Morris Plains, NJ 07950
+
+## Service Areas
+Cheryl serves the following communities in Northwest New Jersey:
+
+### Sussex County
+- Andover - Tranquil rural retreat with historic Main Street ($485K median)
+- Byram - "Township of Lakes" with Lake Mohawk and Cranberry Lake ($455K median)
+- Montague - Rural charm with Delaware River Valley views ($385K median)
+- Walpack - Secluded nature retreat near Delaware Water Gap ($525K median)
+
+### Warren County
+- Hackettstown - "Mountain City" with vibrant downtown ($465K median)
+- Blairstown - NJ's first Appalachian Trail Community ($435K median)
+- Washington - Affordable historic community ($415K median)
+
+### Morris County
+- Chester - Upscale historic elegance with top schools ($525K median)
+- Parsippany Troy Hills - Vibrant suburban community ($485K median)
+
+### Hunterdon County
+- High Bridge - Historic river town with Victorian charm ($325K median)
+
+## Services Offered
+- Home Buying Assistance
+- Home Selling Services
+- Property Valuation & Market Analysis
+- First-Time Home Buyer Guidance
+- Investment Property Consultation
+- Relocation Services
+
+## Credentials & Awards
+- Licensed New Jersey Real Estate Agent
+- Certified Residential Specialist (CRS)
+- Graduate Realtor Institute (GRI)
+- Top Producer 2023
+- Customer Service Excellence Award
+
+## Website Pages
+
+### Main Pages
+- / - Homepage with property search and community overview
+- /about - About Cheryl Towey and her experience
+- /contact - Contact form and office information
+- /listings - Browse all available property listings
+- /properties - Search properties by filters
+- /buyers - Home buyer's guide and mortgage calculator
+- /sellers - Home seller's guide and free valuation
+- /blog - Market insights and real estate tips
+- /communities - Overview of all served communities
+
+### Community Pages
+- /communities/hackettstown - Hackettstown, NJ real estate
+- /communities/andover - Andover, NJ real estate
+- /communities/byram - Byram, NJ real estate
+- /communities/blairstown - Blairstown, NJ real estate
+- /communities/chester - Chester, NJ real estate
+- /communities/washington - Washington, NJ real estate
+- /communities/walpack - Walpack, NJ real estate
+
+### City Pages
+- /cities/montague - Montague, NJ real estate
+- /cities/high-bridge - High Bridge, NJ real estate
+- /cities/parsippany-troy-hills - Parsippany Troy Hills, NJ real estate
+
+## Frequently Asked Questions
+
+### What areas does Cheryl Towey serve?
+Cheryl serves Northwest New Jersey, including Sussex County, Warren County, Morris County, and parts of Hunterdon County. Key communities include Hackettstown, Andover, Byram, Blairstown, Chester, Washington, Montague, High Bridge, and Parsippany Troy Hills.
+
+### How can I contact Cheryl Towey?
+Call 908-334-0971, email cheryl@weichert.com, or visit https://www.realestatebycherylnj.com/contact to submit an inquiry.
+
+### What is the median home price in Northwest NJ?
+Median home prices range from $325,000 (High Bridge) to $525,000 (Chester, Walpack), depending on the community. The average across Cheryl's service area is approximately $450,000.
+
+### Does Cheryl help first-time home buyers?
+Yes, Cheryl specializes in guiding first-time home buyers through the entire process, from mortgage pre-approval to closing.
+
+### How do I get a home valuation?
+Visit https://www.realestatebycherylnj.com/sellers to request a free, no-obligation home valuation.
+
+### What makes Northwest NJ a good place to live?
+Northwest NJ offers excellent schools, low crime rates, outdoor recreation, historic charm, and proximity to NYC (40-70 miles). Communities feature lakes, hiking trails, and tight-knit atmospheres.
+
+## Technical Information
+- Website Framework: Next.js 14
+- Property Listings: Powered by iHomeFinder IDX
+- Sitemap: https://www.realestatebycherylnj.com/sitemap.xml
+- Robots.txt: https://www.realestatebycherylnj.com/robots.txt
+
+## Last Updated
+December 2025

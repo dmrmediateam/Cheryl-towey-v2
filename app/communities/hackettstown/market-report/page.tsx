@@ -1,8 +1,98 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Hackettstown NJ Market Report September 2025 | Real Estate by Cheryl NJ',
-  description: 'Explore the Hackettstown NJ real estate market report for September 2025 with Cheryl Towey. Discover current trends, home values, schools, and what it\'s like to live in this vibrant Warren County community. Contact for personalized insights.',
+export const metadata: Metadata = {
+  title: 'Hackettstown NJ Real Estate Market Report 2025 | Home Values & Trends',
+  description: 'Hackettstown NJ housing market report for 2025. Current home values, market trends, days on market, school ratings & neighborhood insights. Expert analysis by Cheryl Towey, Weichert Realtors.',
+  keywords: [
+    'Hackettstown NJ real estate market',
+    'Hackettstown home values 2025',
+    'Hackettstown housing market trends',
+    'Warren County NJ real estate',
+    'Hackettstown homes for sale',
+    'Hackettstown market analysis',
+    'Northwest NJ housing market',
+    'Hackettstown school ratings',
+    'Hackettstown property values',
+  ],
+  openGraph: {
+    title: 'Hackettstown NJ Real Estate Market Report 2025 | Cheryl Towey',
+    description: 'Expert analysis of Hackettstown housing market: home values, trends, schools & lifestyle. Your guide to buying or selling in Warren County NJ.',
+    url: 'https://www.realestatebycherylnj.com/communities/hackettstown/market-report',
+    siteName: 'Real Estate by Cheryl NJ',
+    locale: 'en_US',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hackettstown NJ Market Report 2025',
+    description: 'Current home values, market trends & expert insights for Hackettstown real estate.',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/hackettstown/market-report',
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Hackettstown, Warren County, New Jersey',
+    'geo.position': '40.8537;-74.8290',
+    'ICBM': '40.8537, -74.8290',
+  },
+};
+
+// Structured Data for Market Report Article
+const articleStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Hackettstown NJ Real Estate Market Report 2025',
+  description: 'Comprehensive analysis of Hackettstown housing market including home values, trends, schools, and neighborhood insights.',
+  author: {
+    '@type': 'RealEstateAgent',
+    name: 'Cheryl Towey',
+    jobTitle: 'Licensed Real Estate Agent',
+    worksFor: {
+      '@type': 'RealEstateOrganization',
+      name: 'Weichert Realtors',
+    },
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Real Estate by Cheryl NJ',
+    url: 'https://www.realestatebycherylnj.com',
+  },
+  datePublished: '2025-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://www.realestatebycherylnj.com/communities/hackettstown/market-report',
+  },
+  about: {
+    '@type': 'Place',
+    name: 'Hackettstown, New Jersey',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Hackettstown',
+      addressRegion: 'NJ',
+      addressCountry: 'US',
+    },
+  },
+};
+
+const localBusinessData = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  name: 'Cheryl Towey - Hackettstown Real Estate Expert',
+  description: 'Expert real estate services in Hackettstown and Warren County NJ. Specializing in residential properties, market analysis, and personalized buyer/seller guidance.',
+  areaServed: {
+    '@type': 'City',
+    name: 'Hackettstown',
+    containedInPlace: {
+      '@type': 'AdministrativeArea',
+      name: 'Warren County, New Jersey',
+    },
+  },
+  url: 'https://www.realestatebycherylnj.com/communities/hackettstown',
+  telephone: '+1-908-619-7444',
+  priceRange: '$$-$$$$',
 };
 
 export default function HackettstownMarketReport() {
@@ -22,6 +112,16 @@ export default function HackettstownMarketReport() {
 
   return (
     <div className="min-h-screen">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }}
+      />
+
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -34,7 +134,7 @@ export default function HackettstownMarketReport() {
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link 
-              href="/communities/hackettstown" 
+              href="/listings?search=Hackettstown" 
               className="btn-primary"
             >
               View Hackettstown Properties
@@ -154,8 +254,44 @@ export default function HackettstownMarketReport() {
           </h2>
           <div className="scroll-animate prose max-w-none mb-8">
             <p className="text-base text-gray-dark leading-relaxed">
-              Hackettstown's market stability, quality schools, and vibrant community make it a standout in Northwest NJ for 2025. With ongoing appreciation and quick sales, it's an opportune time for buyers to invest in this growing area. Sellers benefit from high demand, especially for well-maintained properties near amenities.
+              Hackettstown's market stability, quality schools, and vibrant community make it a standout in Northwest NJ for 2025. With ongoing appreciation and quick sales, it's an opportune time for buyers to invest in this growing area. Sellers benefit from high demand, especially for well-maintained properties near amenities. Compared to nearby <Link href="/communities/washington/market-report" className="text-secondary hover:underline">Washington Borough</Link> with its lower price points or more rural <Link href="/communities/blairstown/market-report" className="text-secondary hover:underline">Blairstown</Link>, Hackettstown offers an ideal balance of affordability and convenience.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Market Reports */}
+      <section className="section-padding bg-gray-light">
+        <div className="container-max">
+          <h2 className="scroll-animate text-3xl sm:text-4xl font-serif font-light text-black mb-8">
+            Explore Nearby Market Reports
+          </h2>
+          <p className="scroll-animate text-base text-gray-dark leading-relaxed mb-8">
+            Considering other communities in Northwest New Jersey? Compare market trends across the region to find the best fit for your needs.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link 
+              href="/communities/washington/market-report"
+              className="scroll-animate block bg-white p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-xl font-serif font-light text-secondary mb-2">Washington Market Report</h3>
+              <p className="text-sm text-gray-dark">Affordable Warren County alternative</p>
+            </Link>
+            <Link 
+              href="/communities/blairstown/market-report"
+              className="scroll-animate block bg-white p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-xl font-serif font-light text-secondary mb-2">Blairstown Market Report</h3>
+              <p className="text-sm text-gray-dark">Rural charm and historic properties</p>
+            </Link>
+            <Link 
+              href="/communities/chester/market-report"
+              className="scroll-animate block bg-white p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-xl font-serif font-light text-secondary mb-2">Chester Market Report</h3>
+              <p className="text-sm text-gray-dark">Morris County premium market</p>
+            </Link>
           </div>
         </div>
       </section>

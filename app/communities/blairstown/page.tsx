@@ -1,9 +1,31 @@
+import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
-export const metadata = {
-  title: 'Homes for Sale in Blairstown, NJ | Cheryl Towey',
-  description: 'Browse luxury homes and real estate listings in Blairstown, New Jersey with Cheryl Towey, your trusted local real estate expert.',
+export const metadata: Metadata = {
+  title: 'Blairstown NJ Homes for Sale | Warren County Real Estate | Cheryl Towey',
+  description: 'Search Blairstown NJ homes for sale with local expert Cheryl Towey. Warren County historic charm specialist. Appalachian Trail community, $435K median. Call 908-334-0971.',
+  keywords: 'Blairstown NJ homes for sale, Warren County real estate, Blairstown realtor, Appalachian Trail homes, historic Blairstown properties, Paulinskill Valley Trail',
+  openGraph: {
+    title: 'Blairstown NJ Real Estate - Historic Homes for Sale',
+    description: 'Find your dream home in historic Blairstown, NJ. Local real estate expert Cheryl Towey specializes in Warren County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/blairstown',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/blairstown.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Blairstown NJ - Historic homes for sale in Warren County',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Blairstown, Warren County, New Jersey',
+    'geo.position': '40.9812;-74.9503',
+    'ICBM': '40.9812, -74.9503',
+  },
 };
 
 export default function BlairstownPage() {
@@ -38,7 +60,17 @@ export default function BlairstownPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Blairstown"
+        slug="blairstown"
+        county="Warren"
+        population={6000}
+        medianPrice={435000}
+        distanceFromNYC="65 miles"
+        description="Blairstown is New Jersey's first Appalachian Trail Community, offering historic charm in Warren County. With about 6,000 residents, this tight-knit community features Roy's Hall Theatre, excellent schools, Paulinskill Valley Trail access, and beloved community events."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -161,7 +193,8 @@ export default function BlairstownPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

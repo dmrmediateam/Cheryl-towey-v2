@@ -1,10 +1,31 @@
 import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
 export const metadata: Metadata = {
-  title: 'Homes for Sale in Andover, NJ | Real Estate by Cheryl Towey',
-  description: 'Browse homes for sale in Andover, NJ with Cheryl Towey. Discover this tranquil Sussex County community featuring historic charm, excellent schools, outdoor recreation, and affordable pricing.',
+  title: 'Andover NJ Homes for Sale | Sussex County Real Estate | Cheryl Towey',
+  description: 'Search Andover NJ homes for sale with local expert Cheryl Towey. Sussex County real estate specialist. Historic charm, excellent schools, $485K median. Call 908-334-0971 for showings.',
+  keywords: 'Andover NJ homes for sale, Sussex County real estate, Andover realtor, Andover Township properties, Lake Aeroflex homes, Sussex Branch Trail area',
+  openGraph: {
+    title: 'Andover NJ Real Estate - Homes for Sale',
+    description: 'Find your dream home in tranquil Andover, NJ. Local real estate expert Cheryl Towey specializes in Sussex County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/andover',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/andover.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Andover NJ - Homes for sale in this beautiful Sussex County community',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Andover, Sussex County, New Jersey',
+    'geo.position': '40.9887;-74.7430',
+    'ICBM': '40.9887, -74.7430',
+  },
 };
 
 export default function AndoverPage() {
@@ -39,7 +60,17 @@ export default function AndoverPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Andover"
+        slug="andover"
+        county="Sussex"
+        population={7000}
+        medianPrice={485000}
+        distanceFromNYC="40 miles"
+        description="Andover is a serene Sussex County gem offering peaceful countryside living just 40 miles from NYC. Known for low crime rates, beautiful landscapes, historic Main Street charm, and excellent schools, this tight-knit community is ideal for families and nature lovers."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -162,7 +193,8 @@ export default function AndoverPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

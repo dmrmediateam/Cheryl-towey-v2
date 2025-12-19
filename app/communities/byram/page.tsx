@@ -1,10 +1,31 @@
 import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
+import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
 
 export const metadata: Metadata = {
-  title: 'Homes for Sale in Byram, NJ | Real Estate by Cheryl Towey',
-  description: 'Find homes for sale in Byram, NJ with Cheryl Towey. Explore this lakeside suburb featuring Lake Mohawk, quality schools, outdoor recreation, and community events in Sussex County.',
+  title: 'Byram NJ Homes for Sale | Sussex County Real Estate | Cheryl Towey',
+  description: 'Search Byram NJ homes for sale with local expert Cheryl Towey. Sussex County lakeside living specialist. Lake Mohawk, Cranberry Lake, $455K median. Call 908-334-0971.',
+  keywords: 'Byram NJ homes for sale, Sussex County real estate, Byram Township properties, Lake Mohawk homes, Cranberry Lake real estate, lakeside homes NJ',
+  openGraph: {
+    title: 'Byram NJ Real Estate - Lakeside Homes for Sale',
+    description: 'Find your dream lakeside home in Byram, NJ. Local real estate expert Cheryl Towey specializes in Sussex County properties.',
+    url: 'https://www.realestatebycherylnj.com/communities/byram',
+    images: [
+      {
+        url: 'https://www.realestatebycherylnj.com/images/byram.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Byram NJ - Lakeside homes for sale in Sussex County',
+      }
+    ],
+  },
+  other: {
+    'geo.region': 'US-NJ',
+    'geo.placename': 'Byram Township, Sussex County, New Jersey',
+    'geo.position': '40.9579;-74.7227',
+    'ICBM': '40.9579, -74.7227',
+  },
 };
 
 export default function ByramPage() {
@@ -39,7 +60,17 @@ export default function ByramPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <CommunityStructuredData
+        name="Byram"
+        slug="byram"
+        county="Sussex"
+        population={8082}
+        medianPrice={455000}
+        distanceFromNYC="50 miles"
+        description="Byram, the 'Township of Lakes,' offers scenic lakeside living with approximately 8,082 residents. Known for Lake Mohawk, Cranberry Lake, quality schools, and community events like Byram Day, this family-friendly Sussex County community is perfect for water lovers."
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
         <div className="container-max">
@@ -162,7 +193,8 @@ export default function ByramPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

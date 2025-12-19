@@ -1,4 +1,16 @@
+import type { Metadata } from 'next'
 import Listings from '@/app/components/Listings';
+
+export const metadata: Metadata = {
+  title: 'NJ Homes for Sale | Property Listings | Cheryl Towey',
+  description: 'Browse homes for sale in Sussex County, Warren County, and Morris County NJ. View property listings, photos, and details. Licensed realtor Cheryl Towey. Call 908-334-0971.',
+  keywords: 'NJ homes for sale, Sussex County listings, Warren County properties, Morris County real estate, New Jersey property listings',
+  openGraph: {
+    title: 'Property Listings | Northwest NJ Homes for Sale',
+    description: 'Search available homes in Northwest New Jersey with Cheryl Towey, your local real estate expert.',
+    url: 'https://www.realestatebycherylnj.com/listings',
+  },
+};
 
 export default function ListingsPage() {
   return (
