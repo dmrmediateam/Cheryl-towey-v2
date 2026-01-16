@@ -13,7 +13,7 @@ export function LocalBusinessSchema() {
     "@id": "https://www.realestatebycherylnj.com/#local-business",
     "name": "Cheryl Towey - Real Estate Agent",
     "alternateName": "Real Estate by Cheryl NJ",
-    "description": "Licensed real estate agent serving Northwest New Jersey including Hackettstown, Sussex County, and Warren County. Over 13 years of local expertise with Weichert Realtors.",
+    "description": "Morris County NJ realtor and licensed real estate agent serving Morris County, Sussex County, and Warren County. Cheryl Towey offers over 13 years of local expertise with Weichert Realtors in Morris Plains.",
     "url": "https://www.realestatebycherylnj.com",
     "telephone": "+19083340971",
     "email": "cheryl@weichert.com",
@@ -61,6 +61,60 @@ export function LocalBusinessSchema() {
     ],
     "areaServed": [
       {
+        "@type": "AdministrativeArea",
+        "name": "Morris County",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Morris Plains",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Morristown",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Parsippany",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Chester",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Madison",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Chatham",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Randolph",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "City",
+        "name": "Denville",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      {
         "@type": "City",
         "name": "Hackettstown",
         "addressRegion": "NJ",
@@ -86,24 +140,18 @@ export function LocalBusinessSchema() {
       },
       {
         "@type": "City",
-        "name": "Chester",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      },
-      {
-        "@type": "City",
         "name": "Washington",
         "addressRegion": "NJ",
         "addressCountry": "US"
       },
       {
-        "@type": "State",
+        "@type": "AdministrativeArea",
         "name": "Sussex County",
         "addressRegion": "NJ",
         "addressCountry": "US"
       },
       {
-        "@type": "State", 
+        "@type": "AdministrativeArea", 
         "name": "Warren County",
         "addressRegion": "NJ",
         "addressCountry": "US"
@@ -119,6 +167,8 @@ export function LocalBusinessSchema() {
       "geoRadius": "50000"
     },
     "knowsAbout": [
+      "Morris County NJ Realtors",
+      "Morris County Real Estate",
       "Residential Real Estate",
       "Home Buying",
       "Home Selling", 

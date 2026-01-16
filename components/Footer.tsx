@@ -98,6 +98,11 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-gold uppercase tracking-wider mb-6">Communities</h4>
             <ul className="space-y-3">
               <li>
+                <Link href="/communities/morris-county" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                  Morris County
+                </Link>
+              </li>
+              <li>
                 <Link href="/communities/hackettstown" className="text-gray-400 hover:text-gold transition-colors text-sm">
                   Hackettstown
                 </Link>
@@ -125,11 +130,6 @@ const Footer = () => {
               <li>
                 <Link href="/communities/washington" className="text-gray-400 hover:text-gold transition-colors text-sm">
                   Washington
-                </Link>
-              </li>
-              <li>
-                <Link href="/communities/walpack" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                  Walpack
                 </Link>
               </li>
             </ul>

@@ -1,11 +1,12 @@
-# Cheryl Towey - Real Estate Agent
-> Licensed New Jersey Real Estate Agent specializing in Northwest NJ properties
+# Cheryl Towey - Morris County NJ Realtor
+> Licensed Morris County NJ Realtor specializing in Northwest NJ properties
 
 ## About
-Cheryl Towey is a licensed real estate agent with Weichert Realtors, serving Northwest New Jersey since 2010. She specializes in residential real estate in Sussex County, Warren County, and Morris County, helping buyers find their dream homes and sellers maximize their property value.
+Cheryl Towey is a trusted Morris County NJ realtor with Weichert Realtors, serving Northwest New Jersey since 2010. Based in Morris Plains, she is the local real estate expert for Morris County, Sussex County, and Warren County. Whether you're looking for Morris County NJ realtors to buy your dream home or sell your property, Cheryl provides personalized service and proven results.
 
 ## Contact Information
 - Name: Cheryl Towey
+- Title: Morris County NJ Realtor
 - Company: Weichert Realtors
 - Phone: 908-334-0971
 - Email: cheryl@weichert.com
@@ -13,25 +14,27 @@ Cheryl Towey is a licensed real estate agent with Weichert Realtors, serving Nor
 - Office Address: 1625 NJ-10 East, Morris Plains, NJ 07950
 
 ## Service Areas
-Cheryl serves the following communities in Northwest New Jersey:
+Cheryl serves the following communities as your Morris County NJ realtor:
+
+### Morris County (Primary Service Area)
+- Morris Plains - Home of Weichert Realtors headquarters with excellent transit
+- Morristown - Historic county seat with vibrant downtown
+- Chester - Upscale historic elegance with top schools ($525K median)
+- Parsippany-Troy Hills - Major business hub with diverse housing
+- Madison - College town charm with walkable downtown
+- Chatham - Prestigious community with top schools
+- Randolph - Family-friendly township with excellent schools
+- Denville - Lakeside living and outdoor recreation
 
 ### Sussex County
 - Andover - Tranquil rural retreat with historic Main Street ($485K median)
 - Byram - "Township of Lakes" with Lake Mohawk and Cranberry Lake ($455K median)
 - Montague - Rural charm with Delaware River Valley views ($385K median)
-- Walpack - Secluded nature retreat near Delaware Water Gap ($525K median)
 
 ### Warren County
 - Hackettstown - "Mountain City" with vibrant downtown ($465K median)
 - Blairstown - NJ's first Appalachian Trail Community ($435K median)
 - Washington - Affordable historic community ($415K median)
-
-### Morris County
-- Chester - Upscale historic elegance with top schools ($525K median)
-- Parsippany Troy Hills - Vibrant suburban community ($485K median)
-
-### Hunterdon County
-- High Bridge - Historic river town with Victorian charm ($325K median)
 
 ## Services Offered
 - Home Buying Assistance
@@ -62,13 +65,13 @@ Cheryl serves the following communities in Northwest New Jersey:
 - /communities - Overview of all served communities
 
 ### Community Pages
+- /communities/morris-county - Morris County NJ real estate and realtors
 - /communities/hackettstown - Hackettstown, NJ real estate
 - /communities/andover - Andover, NJ real estate
 - /communities/byram - Byram, NJ real estate
 - /communities/blairstown - Blairstown, NJ real estate
 - /communities/chester - Chester, NJ real estate
 - /communities/washington - Washington, NJ real estate
-- /communities/walpack - Walpack, NJ real estate
 
 ### City Pages
 - /cities/montague - Montague, NJ real estate
@@ -77,17 +80,20 @@ Cheryl serves the following communities in Northwest New Jersey:
 
 ## Frequently Asked Questions
 
-### What areas does Cheryl Towey serve?
-Cheryl serves Northwest New Jersey, including Sussex County, Warren County, Morris County, and parts of Hunterdon County. Key communities include Hackettstown, Andover, Byram, Blairstown, Chester, Washington, Montague, High Bridge, and Parsippany Troy Hills.
+### What areas does Cheryl Towey serve as a Morris County NJ realtor?
+Cheryl is your trusted Morris County NJ realtor serving Morris Plains, Morristown, Chester, Parsippany, Madison, Chatham, Randolph, Denville, and all Morris County communities. She also serves Sussex County (Andover, Byram) and Warren County (Hackettstown, Blairstown, Washington).
+
+### How can I find Morris County NJ realtors?
+Contact Cheryl Towey at 908-334-0971 for expert Morris County real estate services. As a Morris County NJ realtor based in Morris Plains with Weichert Realtors, she offers local expertise and personalized service.
 
 ### How can I contact Cheryl Towey?
 Call 908-334-0971, email cheryl@weichert.com, or visit https://www.realestatebycherylnj.com/contact to submit an inquiry.
 
-### What is the median home price in Northwest NJ?
-Median home prices range from $325,000 (High Bridge) to $525,000 (Chester, Walpack), depending on the community. The average across Cheryl's service area is approximately $450,000.
+### What is the median home price in Morris County NJ?
+Median home prices in Morris County range from $450,000 to over $1 million depending on the town. The county-wide median is approximately $575,000. Contact your Morris County NJ realtor Cheryl Towey for current market data.
 
-### Does Cheryl help first-time home buyers?
-Yes, Cheryl specializes in guiding first-time home buyers through the entire process, from mortgage pre-approval to closing.
+### Does Cheryl help first-time home buyers in Morris County?
+Yes, Cheryl specializes in guiding first-time home buyers through the entire process, from mortgage pre-approval to closing. As your Morris County NJ realtor, she provides expert guidance on neighborhoods, schools, and market conditions.
 
 ### How do I get a home valuation?
 Visit https://www.realestatebycherylnj.com/sellers to request a free, no-obligation home valuation.

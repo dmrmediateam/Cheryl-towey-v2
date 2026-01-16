@@ -10,6 +10,11 @@ const Communities = () => {
 
   const serviceAreas = [
     { 
+      name: 'Morris County', 
+      slug: 'morris-county',
+      description: 'Your trusted Morris County NJ realtor - serving Morris Plains, Chester, Morristown, Parsippany and all Morris County communities' 
+    },
+    { 
       name: 'Hackettstown', 
       slug: 'hackettstown',
       description: 'Cheryl\'s primary service area - charming Warren County town with historic homes, excellent schools, and modern conveniences' 
@@ -33,11 +38,6 @@ const Communities = () => {
       name: 'Chester', 
       slug: 'chester',
       description: 'Cheryl\'s expertise extends to this Morris County gem with luxury homes and excellent shopping and dining' 
-    },
-    { 
-      name: 'Washington', 
-      slug: 'washington',
-      description: 'Cheryl serves this Warren County community with beautiful properties and convenient access to major highways' 
     },
   ];
 

@@ -78,6 +78,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     
+    // Community Pages - Morris County
+    {
+      url: `${baseUrl}/communities/morris-county`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    
     // Community Pages - Sussex County
     {
       url: `${baseUrl}/communities/sussex-county`,

@@ -12,12 +12,12 @@ import { HomepageStructuredData } from '@/app/components/HomepageStructuredData'
 import { LocalBusinessSchema } from '@/app/components/LocalBusinessSchema';
 
 export const metadata: Metadata = {
-  title: 'Real Estate By Cheryl Towey | Sussex County, Warren County NJ',
-  description: 'Licensed real estate agent Cheryl Towey serves Hackettstown, Andover, Byram, Blairstown, Chester, Washington & Northwest New Jersey. Expert local knowledge, proven results. Call 908-334-0971.',
-  keywords: 'real estate agent Hackettstown NJ, homes for sale Sussex County, Warren County realtor, Andover NJ real estate, Byram Township homes, Blairstown realtor, Chester NJ properties, Washington NJ real estate, Weichert Realtors Morris Plains, Northwest New Jersey homes',
+  title: 'Morris County NJ Realtors | Real Estate Agent Cheryl Towey | Sussex & Warren County',
+  description: 'Morris County NJ realtors - Cheryl Towey is your trusted real estate agent serving Morris County, Sussex County & Warren County NJ. Expert in Hackettstown, Chester, Morris Plains & Northwest NJ. Call 908-334-0971.',
+  keywords: 'Morris County NJ realtors, Morris County real estate agent, real estate agent Hackettstown NJ, homes for sale Sussex County, Warren County realtor, Morris Plains realtor, Chester NJ properties, Parsippany real estate, Weichert Realtors Morris Plains, Northwest New Jersey homes',
   openGraph: {
-    title: 'Cheryl Towey - Your Northwest New Jersey Real Estate Expert',
-    description: 'Find your dream home in Hackettstown, Sussex County, Warren County with experienced realtor Cheryl Towey. Local expertise since 2010.',
+    title: 'Morris County NJ Realtors | Cheryl Towey - Northwest New Jersey Real Estate Expert',
+    description: 'Find your dream home in Morris County, Sussex County & Warren County NJ with experienced realtor Cheryl Towey. Trusted Morris County real estate agent since 2010.',
     type: 'website',
     locale: 'en_US',
     url: 'https://www.realestatebycherylnj.com',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cheryl Towey - Northwest NJ Real Estate Agent',
-    description: 'Expert real estate services in Hackettstown, Sussex & Warren Counties. Licensed realtor with Weichert Realtors.',
+    title: 'Morris County NJ Realtors | Cheryl Towey Real Estate',
+    description: 'Expert Morris County NJ realtor serving Sussex, Warren & Morris Counties. Licensed real estate agent with Weichert Realtors Morris Plains.',
     images: ['https://www.realestatebycherylnj.com/images/cheryl-towey.jpg'],
   },
   alternates: {

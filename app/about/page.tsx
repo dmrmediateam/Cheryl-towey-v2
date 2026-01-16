@@ -1,8 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About Cheryl Towey | Expert New Jersey Real Estate Agent',
-  description: 'Meet Cheryl Towey, your trusted Weichert Realtors agent specializing in Sussex and Warren County real estate. Years of experience helping clients find their dream homes.',
+  title: 'About Cheryl Towey | Morris County NJ Realtor | Weichert Realtors',
+  description: 'Meet Cheryl Towey, your trusted Morris County NJ realtor with Weichert Realtors. Expert in Morris, Sussex & Warren County real estate. Over 13 years helping clients buy and sell homes.',
+  keywords: 'Morris County NJ realtor, about Cheryl Towey, Weichert Realtors Morris Plains, NJ real estate agent, Morris County real estate expert',
 };
 
 export default function AboutPage() {
@@ -43,16 +44,16 @@ export default function AboutPage() {
               </p>
               <div className="space-y-4 text-gray-dark leading-relaxed text-sm">
                 <p className="scroll-animate">
-                  With a deep passion for real estate and an unwavering commitment to client satisfaction, Cheryl Towey has established herself as a trusted advisor in the New Jersey real estate market. Specializing in Sussex County, Warren County, and surrounding communities, Cheryl brings extensive local knowledge and market expertise to every transaction.
+                  With a deep passion for real estate and an unwavering commitment to client satisfaction, Cheryl Towey has established herself as a trusted Morris County NJ realtor. Based in Morris Plains with Weichert Realtors, Cheryl brings extensive local knowledge and market expertise to Morris County, Sussex County, Warren County, and surrounding communities.
                 </p>
                 <p className="scroll-animate">
-                  Cheryl's approach to real estate is built on a foundation of integrity, professionalism, and personalized service. Whether you're a first-time homebuyer, seasoned investor, or looking to sell your property, Cheryl provides expert guidance through every step of the process. Her intimate knowledge of communities like Hackettstown, Andover, Byram, Blairstown, Chester, and Washington allows her to match clients with properties that truly fit their lifestyle and goals.
+                  Cheryl's approach to real estate is built on a foundation of integrity, professionalism, and personalized service. Whether you're a first-time homebuyer, seasoned investor, or looking to sell your property, Cheryl provides expert guidance through every step of the process. Her intimate knowledge of communities like Morris Plains, Chester, Morristown, Parsippany, Hackettstown, Andover, Byram, and Blairstown allows her to match clients with properties that truly fit their lifestyle and goals.
                 </p>
                 <p className="scroll-animate">
-                  As a Weichert Realtors agent, Cheryl leverages cutting-edge technology, comprehensive marketing strategies, and a vast professional network to deliver exceptional results. Her dedication to understanding each client's unique needs, combined with her negotiation skills and attention to detail, ensures a smooth and successful real estate experience from start to finish.
+                  As a Morris County NJ realtor with Weichert Realtors, Cheryl leverages cutting-edge technology, comprehensive marketing strategies, and a vast professional network to deliver exceptional results. Her dedication to understanding each client's unique needs, combined with her negotiation skills and attention to detail, ensures a smooth and successful real estate experience from start to finish.
                 </p>
                 <p className="scroll-animate">
-                  Beyond real estate, Cheryl is deeply committed to the communities she serves, staying actively involved in local events and maintaining strong relationships throughout Northern New Jersey.
+                  Beyond real estate, Cheryl is deeply committed to the communities she serves, staying actively involved in local events and maintaining strong relationships throughout Morris County and Northern New Jersey.
                 </p>
               </div>
 
