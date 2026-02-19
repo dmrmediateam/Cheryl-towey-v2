@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Washington NJ Homes for Sale | Warren County Real Estate | Cheryl Towey',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Washington, Warren County, New Jersey',
     'geo.position': '40.7587;-74.9793',
     'ICBM': '40.7587, -74.9793',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/washington',
   },
 };
 
@@ -61,6 +65,13 @@ export default function WashingtonPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Washington', url: '/communities/washington' },
+        ]}
+      />
       <CommunityStructuredData
         name="Washington"
         slug="washington"

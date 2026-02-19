@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Walpack NJ Homes for Sale | Sussex County Real Estate | Cheryl Towey',
@@ -26,6 +27,9 @@ export const metadata: Metadata = {
     'geo.position': '41.1287;-74.9076',
     'ICBM': '41.1287, -74.9076',
   },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/walpack',
+  },
 };
 
 export default function WalpackPage() {
@@ -45,6 +49,13 @@ export default function WalpackPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Walpack', url: '/communities/walpack' },
+        ]}
+      />
       <CommunityStructuredData
         name="Walpack"
         slug="walpack"

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Chester NJ Homes for Sale | Morris County Real Estate | Cheryl Towey',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Chester, Morris County, New Jersey',
     'geo.position': '40.7840;-74.6968',
     'ICBM': '40.7840, -74.6968',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/chester',
   },
 };
 
@@ -61,6 +65,13 @@ export default function ChesterPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Chester', url: '/communities/chester' },
+        ]}
+      />
       <CommunityStructuredData
         name="Chester"
         slug="chester"

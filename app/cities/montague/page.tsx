@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in Montague, NJ | Cheryl Towey Real Estate',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Montague, Sussex County, New Jersey',
     'geo.position': '41.1761;-74.7597',
     'ICBM': '41.1761, -74.7597',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/cities/montague',
   },
 };
 
@@ -61,6 +65,13 @@ export default function MontaguePage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Cities', url: '/communities' },
+          { name: 'Montague', url: '/cities/montague' },
+        ]}
+      />
       <CommunityStructuredData
         name="Montague"
         slug="montague"

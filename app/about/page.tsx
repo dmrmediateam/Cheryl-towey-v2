@@ -1,13 +1,25 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'About Cheryl Towey | Morris County NJ Realtor | Weichert Realtors',
   description: 'Meet Cheryl Towey, your trusted Morris County NJ realtor with Weichert Realtors. Expert in Morris, Sussex & Warren County real estate. Over 13 years helping clients buy and sell homes.',
   keywords: 'Morris County NJ realtor, about Cheryl Towey, Weichert Realtors Morris Plains, NJ real estate agent, Morris County real estate expert',
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/about',
+  },
 };
 
 export default function AboutPage() {
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'About', url: '/about' },
+        ]}
+      />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
@@ -215,5 +227,6 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

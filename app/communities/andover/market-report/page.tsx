@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Andover NJ Real Estate Market Report 2025 | Home Values & Trends',
@@ -116,7 +117,16 @@ export default function AndoverMarketReport() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Andover', url: '/communities/andover' },
+          { name: 'Market Report', url: '/communities/andover/market-report' },
+        ]}
+      />
+      <div className="min-h-screen">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -390,5 +400,6 @@ export default function AndoverMarketReport() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in Parsippany Troy Hills, NJ | Cheryl Towey',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Parsippany Troy Hills, Morris County, New Jersey',
     'geo.position': '40.8565;-74.4270',
     'ICBM': '40.8565, -74.4270',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/cities/parsippany-troy-hills',
   },
 };
 
@@ -61,6 +65,13 @@ export default function ParsippanyTroyHillsPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Cities', url: '/communities' },
+          { name: 'Parsippany-Troy Hills', url: '/cities/parsippany-troy-hills' },
+        ]}
+      />
       <CommunityStructuredData
         name="Parsippany Troy Hills"
         slug="parsippany-troy-hills"

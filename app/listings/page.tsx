@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Listings from '@/app/components/Listings';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'NJ Homes for Sale | Property Listings | Cheryl Towey',
@@ -10,22 +11,33 @@ export const metadata: Metadata = {
     description: 'Search available homes in Northwest New Jersey with Cheryl Towey, your local real estate expert.',
     url: 'https://www.realestatebycherylnj.com/listings',
   },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/listings',
+  },
 };
 
 export default function ListingsPage() {
   return (
-    <div className="min-h-screen">
-      {/* Page Header */}
-      <section className="section-padding bg-gray-light">
-        <div className="container-max text-center">
-          <h1 className="text-4xl sm:text-5xl font-light text-black mb-6">
-            Property Listings
-          </h1>
-        </div>
-      </section>
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Listings', url: '/listings' },
+        ]}
+      />
+      <div className="min-h-screen">
+        {/* Page Header */}
+        <section className="section-padding bg-gray-light">
+          <div className="container-max text-center">
+            <h1 className="text-4xl sm:text-5xl font-light text-black mb-6">
+              Property Listings
+            </h1>
+          </div>
+        </section>
 
-      {/* iHomeFinder Listings Component */}
-      <Listings />
-    </div>
+        {/* iHomeFinder Listings Component */}
+        <Listings />
+      </div>
+    </>
   );
 }

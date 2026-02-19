@@ -1,8 +1,21 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Communities in New Jersey | Real Estate by Cheryl Towey',
   description: 'Explore premier Northwest New Jersey communities including Hackettstown, Andover, Byram, Blairstown, Chester, and Washington. Find your perfect community with Cheryl Towey.',
+  openGraph: {
+    title: 'Communities in New Jersey | Real Estate by Cheryl Towey',
+    description: 'Explore premier Northwest New Jersey communities including Hackettstown, Andover, Byram, Blairstown, Chester, and Washington.',
+    url: 'https://www.realestatebycherylnj.com/communities',
+    siteName: 'Real Estate by Cheryl NJ',
+    locale: 'en_US',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities',
+  },
 };
 
 export default function CommunitiesPage() {
@@ -100,6 +113,13 @@ export default function CommunitiesPage() {
   ];
 
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+        ]}
+      />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gray-light">
@@ -405,5 +425,6 @@ export default function CommunitiesPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import MortgageCalculator from '@/components/MortgageCalculator';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: "Home Buyer's Guide | Northern NJ Real Estate | Cheryl Towey",
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
     siteName: 'Real Estate by Cheryl NJ',
     locale: 'en_US',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/buyers',
   },
 };
 
@@ -128,6 +132,13 @@ export default function BuyersPage() {
   ];
 
   return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: "Buyer's Guide", url: '/buyers' },
+        ]}
+      />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-b from-gray-light to-white">
@@ -447,5 +458,6 @@ export default function BuyersPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Hackettstown NJ Real Estate Market Report 2025 | Home Values & Trends',
@@ -111,7 +112,16 @@ export default function HackettstownMarketReport() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Hackettstown', url: '/communities/hackettstown' },
+          { name: 'Market Report', url: '/communities/hackettstown/market-report' },
+        ]}
+      />
+      <div className="min-h-screen">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -322,5 +332,6 @@ export default function HackettstownMarketReport() {
         </div>
       </section>
     </div>
+    </>
   );
 }

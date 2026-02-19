@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Morris County NJ Realtors | Trusted Real Estate Agent Cheryl Towey',
@@ -101,6 +102,13 @@ export default function MorrisCountyPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Morris County', url: '/communities/morris-county' },
+        ]}
+      />
       <CommunityStructuredData
         name="Morris County"
         slug="morris-county"

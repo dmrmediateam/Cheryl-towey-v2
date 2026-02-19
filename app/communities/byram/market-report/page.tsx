@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Byram Township NJ Real Estate Market Report 2025 | Home Values & Trends',
@@ -123,7 +124,16 @@ export default function ByramMarketReport() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Byram', url: '/communities/byram' },
+          { name: 'Market Report', url: '/communities/byram/market-report' },
+        ]}
+      />
+      <div className="min-h-screen">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -387,5 +397,6 @@ export default function ByramMarketReport() {
         </div>
       </section>
     </div>
+    </>
   );
 }

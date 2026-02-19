@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in High Bridge, NJ | Cheryl Towey Real Estate',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'High Bridge, Hunterdon County, New Jersey',
     'geo.position': '40.7503;-74.8876',
     'ICBM': '40.7503, -74.8876',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/cities/high-bridge',
   },
 };
 
@@ -61,6 +65,13 @@ export default function HighBridgePage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Cities', url: '/communities' },
+          { name: 'High Bridge', url: '/cities/high-bridge' },
+        ]}
+      />
       <CommunityStructuredData
         name="High Bridge"
         slug="high-bridge"

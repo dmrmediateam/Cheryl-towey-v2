@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import { getBlogPostBySlug, getAllBlogPosts } from '@/data/blogPosts';
 import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -28,6 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.seo?.metaTitle || post.title,
     description: post.seo?.metaDescription || post.description,
+    alternates: {
+      canonical: `https://www.realestatebycherylnj.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.seo?.metaTitle || post.title,
       description: post.seo?.metaDescription || post.description,
@@ -97,6 +101,37 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="min-h-screen bg-white">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Blog', url: '/blog' },
+          { name: post.title, url: `/blog/${slug}` },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.seo?.metaTitle || post.title,
+            description: post.seo?.metaDescription || post.description,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            author: {
+              '@type': 'Person',
+              name: post.author.name,
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Real Estate by Cheryl NJ',
+              url: 'https://www.realestatebycherylnj.com',
+            },
+            image: post.mainImage.asset.url,
+            mainEntityOfPage: `https://www.realestatebycherylnj.com/blog/${slug}`,
+          }),
+        }}
+      />
       {/* Hero Section */}
       <div className="relative h-[60vh] min-h-[500px] bg-black">
         <img

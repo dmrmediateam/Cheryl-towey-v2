@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Blairstown NJ Homes for Sale | Warren County Real Estate | Cheryl Towey',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Blairstown, Warren County, New Jersey',
     'geo.position': '40.9812;-74.9503',
     'ICBM': '40.9812, -74.9503',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/blairstown',
   },
 };
 
@@ -61,6 +65,13 @@ export default function BlairstownPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Blairstown', url: '/communities/blairstown' },
+        ]}
+      />
       <CommunityStructuredData
         name="Blairstown"
         slug="blairstown"

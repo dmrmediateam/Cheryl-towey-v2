@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Byram NJ Homes for Sale | Sussex County Real Estate | Cheryl Towey',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Byram Township, Sussex County, New Jersey',
     'geo.position': '40.9579;-74.7227',
     'ICBM': '40.9579, -74.7227',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/byram',
   },
 };
 
@@ -61,6 +65,13 @@ export default function ByramPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Byram', url: '/communities/byram' },
+        ]}
+      />
       <CommunityStructuredData
         name="Byram"
         slug="byram"

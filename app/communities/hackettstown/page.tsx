@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Hackettstown NJ Homes for Sale | Local Real Estate Agent Cheryl Towey | Warren County',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Hackettstown, Warren County, New Jersey',
     'geo.position': '40.8584;-74.8282',
     'ICBM': '40.8584, -74.8282',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/hackettstown',
   },
 };
 
@@ -61,6 +65,13 @@ export default function HackettstownPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Hackettstown', url: '/communities/hackettstown' },
+        ]}
+      />
       <CommunityStructuredData
         name="Hackettstown"
         slug="hackettstown"

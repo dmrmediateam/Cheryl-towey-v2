@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link';
 import CommunityProperties from '@/app/components/CommunityProperties';
 import { CommunityStructuredData } from '@/app/components/CommunityStructuredData';
+import { BreadcrumbSchema } from '@/app/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Andover NJ Homes for Sale | Sussex County Real Estate | Cheryl Towey',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Andover, Sussex County, New Jersey',
     'geo.position': '40.9887;-74.7430',
     'ICBM': '40.9887, -74.7430',
+  },
+  alternates: {
+    canonical: 'https://www.realestatebycherylnj.com/communities/andover',
   },
 };
 
@@ -61,6 +65,13 @@ export default function AndoverPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Communities', url: '/communities' },
+          { name: 'Andover', url: '/communities/andover' },
+        ]}
+      />
       <CommunityStructuredData
         name="Andover"
         slug="andover"
